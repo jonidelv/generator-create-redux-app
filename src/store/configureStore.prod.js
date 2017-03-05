@@ -3,8 +3,8 @@ import ReduxThunk from 'redux-thunk'
 import rootReducer from '../reducers'
 
 const middlewares = [ReduxThunk]
-const enhancer = applyMiddleware(...middlewares)
+const enhancer = [applyMiddleware(...middlewares)]
 
-export default function configureStore(initialState) {
-  return createStore(rootReducer, initialState, enhancer)
+export default function configureStore(initialState = {}) {
+  return createStore(rootReducer, initialState, ...enhancer)
 }
