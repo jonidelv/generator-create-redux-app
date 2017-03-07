@@ -1,6 +1,7 @@
 # Table of Contents
 
-- [Redux DevTools](#Redux DevTools)
+- [Redux DevTools](##Redux DevTools)
+- [To do](##To do)
 
 ## Redux DevTools
 Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/). It provides access to the most popular monitors, is easy to configure and to filter actions.
@@ -21,3 +22,15 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 
 #### 4. For other browsers and non-browser environment
   - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
+
+## To do
+
+  - implement Styled Component
+  - implement Libraries (immutable etc.)
+  - implement eslint
+  - implement editor config
+  - implement husky
+  - implement index imports
+  - implement offline first
+  - Rewrite readme
+  - implement bitHound

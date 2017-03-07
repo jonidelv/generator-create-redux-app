@@ -1,16 +1,11 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes } from 'react'
 
-export default class Counter extends Component {
-  static propTypes = {
-    increment: PropTypes.func.isRequired,
-    incrementIfOdd: PropTypes.func.isRequired,
-    decrement: PropTypes.func.isRequired,
-    counter: PropTypes.number.isRequired
-  };
-
-  render() {
-    const { increment, incrementIfOdd, decrement, counter } = this.props
-    return (
+export default function Counter({increment, incrementIfOdd, decrement, counter}) {
+  return (
+    <section>
+      <p className="intro">
+        To get started, edit <code>src/App.js</code> and save to reload.
+      </p>
       <p>
         Clicked: {counter} times
         {' '}
@@ -20,6 +15,13 @@ export default class Counter extends Component {
         {' '}
         <button onClick={incrementIfOdd}>Increment if odd</button>
       </p>
-    )
-  }
+    </section>
+  )
+}
+
+Counter.propTypes = {
+  increment: PropTypes.func.isRequired,
+  incrementIfOdd: PropTypes.func.isRequired,
+  decrement: PropTypes.func.isRequired,
+  counter: PropTypes.number.isRequired
 }
