@@ -2,11 +2,12 @@ This project add Redux, some useful libraries likes styled-component and keep in
 Below you will find some information on how to perform common tasks.<br>
 
 
-## Table of Contents
+# Table of Contents
 - [Folder Structure](#folder-structure)
-- [Redux DevTools](#redux-dev-tools)
+- [Redux Dev Tools](#redux-dev-tools)
 - [Yarn](#yarn)
 - [To do](#to-do)
+- [create-react-app config](#create-react-app-config)
 
 
 ## Folder Structure
@@ -53,7 +54,7 @@ You can, however, create more top-level directories.<br>
 They will not be included in the production build so you can use them for things like documentation.
 
 
-## Redux DevTools
+## Redux Dev Tools
 
 Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/). It provides access to the most popular monitors, is easy to configure and to filter actions.
 
@@ -104,6 +105,8 @@ Removes an unused package from your current package.
 
 <br>
 <br>
+
+## create-react-app config
 
 You can find the most recent version of the create-react-app guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
