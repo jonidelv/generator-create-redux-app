@@ -5,21 +5,41 @@ import Counter from '../components/Counter'
 import * as CounterActions from '../actions/CounterActions'
 
 class CounterApp extends Component {
+  increment = () => {
+    this.props.increment();
+  }
+
+  decrement = () => {
+    this.props.decrement();
+  }
+
+  incrementIfOdd = () => {
+    this.props.incrementIfOdd();
+  }
+
   render() {
-    const { counter, dispatch } = this.props
     return (
       <Counter
-        counter={counter}
-        {...bindActionCreators(CounterActions, dispatch)}
+        counter={this.props.counter}
+        increment={this.increment}
+        decrement={this.decrement}
+        incrementIfOdd={this.incrementIfOdd}
       />
     )
   }
 }
 
-function select(state) {
+function mapStateToProps (state) {
   return {
-    counter: state.counter
-  };
+    counter: state.counter,
+  }
 }
 
-export default connect(select)(CounterApp)
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators(CounterActions, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(CounterApp)

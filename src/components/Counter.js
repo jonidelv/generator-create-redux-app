@@ -4,7 +4,7 @@ export default function Counter({increment, incrementIfOdd, decrement, counter})
   return (
     <section>
       <p className="intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
+        To get started, edit <code>src/containers/AppContainer.js</code> and save to reload.
       </p>
       <p>
         Clicked: {counter} times
@@ -23,5 +23,5 @@ Counter.propTypes = {
   increment: PropTypes.func.isRequired,
   incrementIfOdd: PropTypes.func.isRequired,
   decrement: PropTypes.func.isRequired,
-  counter: PropTypes.number.isRequired
+  counter: PropTypes.number.isRequired,
 }

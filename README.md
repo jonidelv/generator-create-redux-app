@@ -1,4 +1,4 @@
-This project add Redux, some useful libraries likes styled-component and keep in sync with the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
+This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). Just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` and you are ready to go. <br>
 Below you will find some information on how to perform common tasks.<br>
 
 
@@ -13,7 +13,7 @@ Below you will find some information on how to perform common tasks.<br>
 ## Folder Structure
 
 create-redux-app override create-redux-app folder structure.
-Your project should look like this:
+Your project folders should look like this:
 
 ```
 my-app/
@@ -25,15 +25,15 @@ my-app/
     index.html
     favicon.ico
   src/
-    actions
-    assets
-    components
-    constants
-    containers
-    reducers
-    store
-    test
-    styles
+    actions/
+    assets/
+    components/
+    constants/
+    containers/
+    reducers/
+    store/
+    tests/
+    styles/
     index.js
 ```
 
@@ -78,7 +78,7 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 
 ## Yarn
 
-Yarn is a package manager for your code. It's like npm but fuster and ff you've installed a package before, you can install it again without any internet connection.
+[Yarn](https://yarnpkg.com/en/) is a package manager for your code. It's like npm but fuster and if you've installed a package before, you can install it again without any internet connection.
 
 ### Usage
 
