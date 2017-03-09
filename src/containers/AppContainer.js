@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import CounterApp from './CounterApp'
-import Header from '../components/Header'
+import CounterContainer from './CounterContainer'
+import { Header } from '../components'
 
 class AppContainer extends Component {
   render() {
     return (
       <div className="app-container">
         <Header />
-        <CounterApp />
+        <CounterContainer />
       </div>
     )
   }

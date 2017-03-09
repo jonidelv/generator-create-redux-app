@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Counter from '../components/Counter'
+import { Counter } from '../components'
 import * as CounterActions from '../actions/CounterActions'
 
-class CounterApp extends Component {
+class CounterContainer extends Component {
   increment = () => {
     this.props.increment();
   }
@@ -42,4 +42,4 @@ function mapDispatchToProps (dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(CounterApp)
+)(CounterContainer)

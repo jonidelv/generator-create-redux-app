@@ -99,9 +99,7 @@ Removes an unused package from your current package.
   - implement eslint
   - implement editor config
   - implement husky
-  - implement index imports
   - implement offline first
-  - Rewrite readme
 
 <br>
 <br>
