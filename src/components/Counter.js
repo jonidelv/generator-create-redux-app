@@ -9,7 +9,7 @@ export default function Counter({
   return (
     <section>
       <p className="intro">
-        To get started, edit <code>src/containers/AppContainer.js</code>
+        To get started, edit <code>src/routes/index.js</code>
         and save to reload.
       </p>
       <p>

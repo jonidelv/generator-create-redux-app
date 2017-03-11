@@ -2,12 +2,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import configureStore from './store'
-import { AppContainer } from './containers'
+import Routes from './routes'
 import './styles/index.css'
 
 render(
   <Provider store={configureStore()}>
-    <AppContainer />
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )

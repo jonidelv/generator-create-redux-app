@@ -6,15 +6,15 @@ import * as CounterActions from '../actions/CounterActions'
 
 class CounterContainer extends Component {
   increment = () => {
-    this.props.increment();
+    this.props.increment()
   }
 
   decrement = () => {
-    this.props.decrement();
+    this.props.decrement()
   }
 
   incrementIfOdd = () => {
-    this.props.incrementIfOdd();
+    this.props.incrementIfOdd()
   }
 
   render() {

@@ -119,10 +119,11 @@ To import Components or Containers doit like follow:
 We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run eslint to prevent bad commits. You can add more by editing the package.json.<br>
 ```
 // Edit package.json
+
 {
   "scripts": {
-    "precommit": "npm test",
-    "prepush": "npm test",
+    "precommit": "npm run lint",
+    "prepush": "whatever...",
     "...": "..."
   }
 }
@@ -141,6 +142,7 @@ And delete the `pre` scripts in`package.json`
 You can add/remove rules or even extend plugins if you want. We extend `react-app` and have some specific rules.
 ```
 // Edit package.json
+
 "eslintConfig": {
   "extends": "react-app",
   "rules": {
