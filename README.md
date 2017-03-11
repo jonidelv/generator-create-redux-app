@@ -175,7 +175,7 @@ You can add/remove rules or even extend plugins if you want. We extend `react-ap
 ## Routing
 
 The best option for routing is [React Router](https://reacttraining.com/react-router/) specifically its new version for the web [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start). <br>
-`src/routes/index.js` this is the starter point of the app, where all the routes are specified and render the app containers and components. Specify here all your routes, redirects, transitions, etc.
+`src/routes/index.js` is the starter point of the app, where all the routes are specified and render the containers and components. Specify here all your routes, redirects, transitions, etc.
 
 
 ## To do
@@ -184,8 +184,6 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
   - implement Libraries (immutable etc)
   - implement offline first
 
-<br>
-<br>
 
 ## create-react-app config
 
