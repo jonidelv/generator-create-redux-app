@@ -7,6 +7,8 @@ Below you will find some information on how to perform common tasks.<br>
 - [Redux Dev Tools](#redux-dev-tools)
 - [Yarn](#yarn)
 - [Import Export Containers and Components](#import-export-containers-and-components)
+- [Git Hooks](#git-hooks)
+- [ESLint](#eslint)
 - [To do](#to-do)
 - [create-react-app config](#create-react-app-config)
 
@@ -107,18 +109,70 @@ To import Components or Containers doit like follow:
   - Inside the same folder (Components/Containers)
     `import Comp1 from './Comp1'`
     `import Cont1 from './Cont1'`
-  - Outside the same folder (Components/Containers)
-    `import { Comp1 } from '../components'`
+  - Outside the same folder (Components/Containers) <br>
+    `import { Comp1 } from '../components'`<br>
     `import { Cont1 } from '../containers'`
+
+
+## Git Hooks
+
+We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run eslint to prevent bad commits. You can add more by editing the package.json.<br>
+```
+// Edit package.json
+{
+  "scripts": {
+    "precommit": "npm test",
+    "prepush": "npm test",
+    "...": "..."
+  }
+}
+```
+
+### Uninstall
+
+```
+npm uninstall husky --save-dev
+```
+And delete the `pre` scripts in`package.json`
+
+
+## ESLint
+
+You can add/remove rules or even extend plugins if you want. We extend `react-app` and have some specific rules.
+```
+// Edit package.json
+"eslintConfig": {
+  "extends": "react-app",
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "react/jsx-space-before-closing": [
+      2,
+      "always"
+    ],
+    "react/jsx-closing-bracket-location": [
+      2,
+      "tag-aligned"
+    ],
+    "semi": [
+      "error",
+      "never"
+    ],
+    "max-len": [
+      "error",
+      80
+    ]
+  }
+}
+```
 
 
 ## To do
 
   - implement Styled Component
-  - implement Libraries (immutable etc.)
-  - implement eslint
-  - implement editor config
-  - implement husky
+  - implement Libraries (immutable etc, react-router)
   - implement offline first
 
 <br>

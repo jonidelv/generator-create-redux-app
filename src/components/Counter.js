@@ -1,10 +1,16 @@
 import React, { PropTypes } from 'react'
 
-export default function Counter({increment, incrementIfOdd, decrement, counter}) {
+export default function Counter({
+  increment,
+  incrementIfOdd,
+  decrement,
+  counter,
+}) {
   return (
     <section>
       <p className="intro">
-        To get started, edit <code>src/containers/AppContainer.js</code> and save to reload.
+        To get started, edit <code>src/containers/AppContainer.js</code>
+        and save to reload.
       </p>
       <p>
         Clicked: {counter} times
