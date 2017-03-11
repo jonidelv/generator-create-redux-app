@@ -1,4 +1,4 @@
-This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). Just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` and you are ready to go. <br>
+This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). To use it just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` and start the server `npm start`. <br>
 Below you will find some information on how to perform common tasks.<br>
 
 
@@ -6,6 +6,7 @@ Below you will find some information on how to perform common tasks.<br>
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
 - [Yarn](#yarn)
+- [Import Export Containers and Components](#import-export-containers-and-components)
 - [To do](#to-do)
 - [create-react-app config](#create-react-app-config)
 
@@ -90,6 +91,25 @@ Adds a package to use in your current package.
 
 #### `yarn remove`
 Removes an unused package from your current package.
+
+## Import Export Containers and Components
+
+### Export
+To Export Components or Containers there is an `index.js` file in each root folder so you have to export it there first in order to import outside the root folder.
+  ```
+  index.js/
+    export { default as Comp1 } from './Comp1'
+    export { default as Comp2 } from './Comp2'
+  ```
+
+### Import
+To import Components or Containers doit like follow:
+  - Inside the same folder (Components/Containers)
+    `import Comp1 from './Comp1'`
+    `import Cont1 from './Cont1'`
+  - Outside the same folder (Components/Containers)
+    `import { Comp1 } from '../components'`
+    `import { Cont1 } from '../containers'`
 
 
 ## To do
