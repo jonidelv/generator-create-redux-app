@@ -20,7 +20,7 @@
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
     "husky": "^0.13.2",
-    "react-scripts": "0.9.3"
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
