@@ -1,4 +1,4 @@
-This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). To use it just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` and start the server `npm start`. <br>
+This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). To use it just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` or `yarn install` and start the server `npm start`. <br>
 Below you will find some information on how to perform common tasks.<br>
 
 
@@ -9,6 +9,7 @@ Below you will find some information on how to perform common tasks.<br>
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [ESLint](#eslint)
+- [Routing](#routing)
 - [To do](#to-do)
 - [create-react-app config](#create-react-app-config)
 
@@ -34,6 +35,7 @@ my-app/
     constants/
     containers/
     reducers/
+    routes/
     store/
     tests/
     styles/
@@ -170,11 +172,16 @@ You can add/remove rules or even extend plugins if you want. We extend `react-ap
 }
 ```
 
+## Routing
+
+The best option for routing is [React Router](https://reacttraining.com/react-router/) specifically its new version for the web [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start). <br>
+`src/routes/index.js` this is the starter point of the app, where all the routes are specified and render the app containers and components. Specify here all your routes, redirects, transitions, etc.
+
 
 ## To do
 
   - implement Styled Component
-  - implement Libraries (immutable etc, react-router)
+  - implement Libraries (immutable etc)
   - implement offline first
 
 <br>
