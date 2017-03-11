@@ -1,7 +1,6 @@
 # Create Redux App
 
 [![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm)
-
 [![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm) <br>
 
 This project add Redux and some useful libraries like styled-component to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app). To use it just clone this repo `git clone https://github.com/delvallejonatan/create-redux-app.git`, install dependencies `npm install` or `yarn install` and start the server `npm start`. <br>
