@@ -17,13 +17,11 @@ cd create-redux-app
 npm start
 ```
 Then open [http://localhost:3000/](http://localhost:3000/) to see your app.<br>
-When you’re ready to deploy to production, create a minified bundle with `npm run build`.
 
 **You’ll need to have Node >= 4 on your machine**.
 
 **We strongly recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage.** You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
 
-No configuration or complicated folder structures, just the files you need to build your app.<br>
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
@@ -157,7 +155,7 @@ To Export Components or Containers there is an `index.js` file in each root fold
 
 ### Import
 To import Components or Containers doit like follow:
-  - Inside the same folder (Components/Containers)
+  - Inside the same folder (Components/Containers) <br>
     `import Comp1 from './Comp1'`
     `import Cont1 from './Cont1'`
   - Outside the same folder (Components/Containers) <br>
@@ -231,7 +229,6 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 
   - implement Styled Component
   - implement Libraries (immutable etc)
-  - implement offline first
 
 
 ## Create React App config
