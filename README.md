@@ -57,7 +57,7 @@ Your app is ready to be deployed!
 - [Git Hooks](#git-hooks)
 - [ESLint](#eslint)
 - [Routing](#routing)
-- [To do](#to-do)
+- [Styled Components](#styled-components)
 - [Create React App config](#create-react-app-config)
 
 
@@ -156,7 +156,7 @@ To Export Components or Containers there is an `index.js` file in each root fold
 ### Import
 To import Components or Containers doit like follow:
   - Inside the same folder (Components/Containers) <br>
-    `import Comp1 from './Comp1'`
+    `import Comp1 from './Comp1'`<br>
     `import Cont1 from './Cont1'`
   - Outside the same folder (Components/Containers) <br>
     `import { Comp1 } from '../components'`<br>
@@ -225,10 +225,63 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 `src/routes/index.js` is the starter point of the app, where all the routes are specified and render the containers and components. Specify here all your routes, redirects, transitions, etc.
 
 
-## To do
+## Styled Components
 
-  - implement Styled Component
-  - implement Libraries (immutable etc)
+`styled-components` allow you to write actual CSS code in your JavaScript to style your components,
+removing the mapping between components and styles.
+
+See the
+[official documentation](https://github.com/styled-components/styled-components)
+for more information!
+
+### Usage
+
+This creates two react components, `<Title>` and `<Wrapper>`:
+
+```JSX
+import React from 'react';
+
+import styled from 'styled-components';
+
+// Create a <Title> react component that renders an <h1> which is
+// centered, palevioletred and sized at 1.5em
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+// Create a <Wrapper> react component that renders a <section> with
+// some padding and a papayawhip background
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+```
+
+*(The CSS rules are automatically vendor prefixed, so you don't have to think about it!)*
+
+You render them like so:
+
+```JSX
+// Use them like any other React component – except they're styled!
+<Wrapper>
+  <Title>Hello World, this is my first styled component!</Title>
+</Wrapper>
+```
+
+For further examples see the
+[official documentation](https://github.com/styled-components/styled-components).
+
+### Can I use Sass, Less with this boilerplate?
+
+Yes, although we advise against it and **do not support this**. We selected
+[`styled-components`](https://github.com/styled-components/styled-components)
+over Sass because its approach is more powerful: instead of trying to
+give a styling language programmatic abilities, it pulls logic and configuration
+out into JS where we believe those features belong.
+
+If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/delvallejonatan/create-redux-app#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Create React App config
