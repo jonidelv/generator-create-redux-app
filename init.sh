@@ -5,11 +5,7 @@ cp README.md docs/;
 rm README.md;
 ex -sc '1d5|x' ./docs/README.md;
 echo "This project was bootstrapped with[Create Redux App](https://github.com/delvallejonatan/create-redux-app). Refer to **docs** to find information on how to perform common tasks." > README.md;
-rm .git/;
+rm -rf .git;
 git init && git add . && git commit -m "Initial commit";
-if [ yarn --version ]
-then
-  yarn install
-else
-  npm install
-fi
+npm install;
+rm init.sh;
