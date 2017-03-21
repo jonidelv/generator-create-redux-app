@@ -11,7 +11,7 @@ Below you will find some information on how to perform common tasks.<br>
 
 1. Clone this repo using `git clone --depth=1 https://github.com/delvallejonatan/create-redux-app.git`
 2. Run `npm run init` to install dependencies and clean the git repo.<br />
-   *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
+   At this point you can run `npm start` to see the example app at `http://localhost:3000`.
    > Note: This command is self-destructive, once you've run it the init script is
    gone forever. This is for your own safety, so you can't delete your project's
    history irreversibly by accident.
