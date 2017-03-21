@@ -7,21 +7,16 @@ This project add **Redux** and some useful libraries like styled-component to th
 Below you will find some information on how to perform common tasks.<br>
 
 
-## Quick Overview
+## Quick start
 
-```sh
-git clone https://github.com/delvallejonatan/create-redux-app.git
-
-npm install
-cd create-redux-app
-npm start
-```
-Then open [http://localhost:3000/](http://localhost:3000/) to see your app.<br>
+1. Clone this repo using `git clone --depth=1 https://github.com/delvallejonatan/create-redux-app.git`
+2. Run `npm run init` to install dependencies and clean the git repo.<br />
+   *At this point you can run `npm start` to see the example app at `http://localhost:3000`.*
+   > Note: This command is self-destructive, once you've run it the init script is
+   gone forever. This is for your own safety, so you can't delete your project's
+   history irreversibly by accident.
 
 **You’ll need to have Node >= 4 on your machine**.
-
-**We strongly recommend to use Node >= 6 and npm >= 3 for faster installation speed and better disk usage.** You can use [nvm](https://github.com/creationix/nvm#usage) to easily switch Node versions between different projects.
-
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
