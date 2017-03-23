@@ -2,13 +2,13 @@ import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
 
 export function increment() {
   return {
-    type: INCREMENT_COUNTER
+    type: INCREMENT_COUNTER,
   }
 }
 
 export function decrement() {
   return {
-    type: DECREMENT_COUNTER
+    type: DECREMENT_COUNTER,
   }
 }
 
@@ -17,9 +17,9 @@ export function incrementIfOdd() {
     const { counter } = getState()
 
     if (counter % 2 === 0) {
-      return;
+      return
     }
 
-    dispatch(increment());
+    dispatch(increment())
   }
 }

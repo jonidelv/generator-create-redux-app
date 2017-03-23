@@ -13,6 +13,8 @@
     "styled-components": "^1.4.4"
   },
   "devDependencies": {
+    "node-plop": "^0.5.5",
+    "plop": "^1.7.4",
     "babel-eslint": "^7.1.1",
     "eslint": "^3.17.1",
     "eslint-config-react-app": "^0.6.2",
@@ -30,7 +32,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint 'src/**/*.{js}'",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "generate": "plop --plopfile generators/index.js"
   },
   "eslintConfig": {
     "extends": "react-app",

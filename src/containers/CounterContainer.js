@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React, { PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Counter } from '../components'
 import * as CounterActions from '../actions/CounterActions'
 
-class CounterContainer extends Component {
+class CounterContainer extends React.Component {
   increment = () => {
     this.props.increment()
   }
@@ -27,6 +27,10 @@ class CounterContainer extends Component {
       />
     )
   }
+}
+
+CounterContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired,
 }
 
 function mapStateToProps (state) {

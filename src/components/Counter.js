@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-export default function Counter({
+function Counter({
   increment,
   incrementIfOdd,
   decrement,
@@ -31,3 +31,5 @@ Counter.propTypes = {
   decrement: PropTypes.func.isRequired,
   counter: PropTypes.number.isRequired,
 }
+
+export default Counter

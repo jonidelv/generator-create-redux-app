@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
 
-export default function Header() {
+function Header() {
   return (
     <header>
       <img src={logo} className="redux-logo" alt="logo" />
@@ -9,3 +9,5 @@ export default function Header() {
     </header>
   )
 }
+
+export default Header
