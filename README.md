@@ -68,6 +68,7 @@ my-app/
   node_modules/
   package.json
   yarn.lock
+  docs/
   generators/
   public/
     index.html

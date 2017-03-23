@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-mkdir docs;
+rm docs/*
 cp README.md docs/;
 rm README.md;
 ex -sc '1d5|x' ./docs/README.md;
