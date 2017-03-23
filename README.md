@@ -283,8 +283,6 @@ If you _really_ still want (or need) to use Sass or Less [then...](https://githu
 
 ## Generators
 
-## Generators
-
 ```Shell
 npm run generate
 ```
