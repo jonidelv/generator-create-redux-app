@@ -29,10 +29,6 @@ class CounterContainer extends React.Component {
   }
 }
 
-CounterContainer.propTypes = {
-  dispatch: PropTypes.func.isRequired,
-}
-
 function mapStateToProps (state) {
   return {
     counter: state.counter,
