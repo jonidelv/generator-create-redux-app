@@ -1,10 +1,6 @@
 # Create Redux App
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm)
-> This generator add **Redux** and some useful tools like **styled-component** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
-Below you will find some information on how to perform common tasks.
+This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/create-redux-app). Here you can find information on how to perform common tasks.
 
 ## Installation
 
@@ -18,8 +14,6 @@ npm install -g generator-create-redux-app
 Then generate your new project:
 
 ```bash
-mkdir project-name
-cd project-name
 yo create-redux-app
 ```
 

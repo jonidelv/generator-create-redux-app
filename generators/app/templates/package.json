@@ -1,0 +1,68 @@
+{
+  "name": "<%= projectName %>",
+  "description": "<%= projectDescription %>",
+  "version": "<%= projectVersion %>",
+  "author": "<%= authorName %> ",
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^1.4.4"
+  },
+  "devDependencies": {
+    "node-plop": "^0.5.5",
+    "plop": "^1.7.4",
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.17.1",
+    "eslint-config-react-app": "^0.6.2",
+    "eslint-plugin-flowtype": "^2.30.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "husky": "^0.13.2",
+    "react-scripts": "0.9.5"
+  },
+  "scripts": {
+    "init": "./init.sh",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "lint": "eslint 'src/**/*.{js}'",
+    "precommit": "npm run lint",
+    "generate": "plop --plopfile generators/index.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "react/jsx-space-before-closing": [
+        2,
+        "always"
+      ],
+      "react/jsx-closing-bracket-location": [
+        2,
+        "tag-aligned"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
+      "max-len": [
+        "error",
+        80
+      ]
+    }
+  },
+  "engines": {
+    "npm": ">=3",
+    "node": ">=4"
+  }
+}
