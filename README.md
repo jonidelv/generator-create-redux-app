@@ -1,8 +1,13 @@
 # Create Redux App
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm)
-[![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/create-redux-app/master/dependencies/npm)
+[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)
+
+[![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)
+
+[![bitHound Code](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app)
+
+[![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app)
+
 > This generator add **Redux** and some useful tools like **styled-component** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
 Below you will find some information on how to perform common tasks.
 
@@ -308,12 +313,4 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-MIT © [delvallejonatan](http://joni.website)
-
-
-[npm-image]: https://badge.fury.io/js/generator-create-redux-app.svg
-[npm-url]: https://npmjs.org/package/generator-create-redux-app
-[travis-image]: https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master
-[travis-url]: https://travis-ci.org/delvallejonatan/generator-create-redux-app
-[daviddm-image]: https://david-dm.org/delvallejonatan/generator-create-redux-app.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/delvallejonatan/generator-create-redux-app
+[MIT License](https://github.com/delvallejonatan/create-redux-app/blob/master/LICENSE)
