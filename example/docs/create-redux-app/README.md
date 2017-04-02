@@ -1,13 +1,10 @@
-# Generator create-redux-app
+# Create Redux App
 
-[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app) [![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app) [![Codeship](https://img.shields.io/codeship/a24b6300-f9ac-0134-bf7b-0e0845e8df31/master.svg)]()
-
-> This generator add **Redux** and some useful tools like **styled-component** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
-Below you will find some information on how to perform common tasks.
+This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/generator-create-redux-app). Here you can find information on how to perform common tasks.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 4 on your machine**  [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -17,11 +14,10 @@ npm install -g generator-create-redux-app
 Then generate your new project:
 
 ```bash
-mkdir project-name
-cd project-name
 yo create-redux-app
 ```
 
+**You’ll need to have Node >= 4 on your machine**.
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
@@ -284,7 +280,7 @@ over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
 out into JS where we believe those features belong.
 
-If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/delvallejonatan/create-redux-app#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Generators
@@ -296,7 +292,7 @@ npm run generate
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`.
+generate container`)
 
 
 ## Create React App config
@@ -306,8 +302,12 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-[MIT License](https://github.com/delvallejonatan/generator-create-redux-app/blob/master/LICENSE)
+MIT © [delvallejonatan](http://joni.website)
 
-### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+[npm-image]: https://badge.fury.io/js/generator-create-redux-app.svg
+[npm-url]: https://npmjs.org/package/generator-create-redux-app
+[travis-image]: https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master
+[travis-url]: https://travis-ci.org/delvallejonatan/generator-create-redux-app
+[daviddm-image]: https://david-dm.org/delvallejonatan/generator-create-redux-app.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/delvallejonatan/generator-create-redux-app

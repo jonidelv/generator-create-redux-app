@@ -1,0 +1,43 @@
+{{#if addRedux}}
+import React, { PropTypes } from 'react'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import * as {{ actionsFile }} from '../actions/{{ actionsFile }}'
+{{/if}}
+{{#unless addRedux}}
+import React from 'react'
+{{/unless}}
+
+class {{ properCase name }} extends React.{{{ component }}} {
+
+  static propTypes = {
+
+  }
+
+  render() {
+    return (
+      <div>
+      </div>
+    )
+  }
+}
+
+{{#if addRedux}}
+function mapStateToProps (state) {
+  return {
+
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return bindActionCreators({{ actionsFile }}, dispatch)
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)({{ properCase name }})
+{{/if}}
+{{#unless addRedux}}
+export default {{ properCase name }}
+{{/unless}}

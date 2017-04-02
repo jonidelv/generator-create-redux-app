@@ -1,6 +1,6 @@
 # Create Redux App
 
-This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/create-redux-app). Here you can find information on how to perform common tasks.
+This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/generator-create-redux-app). Here you can find information on how to perform common tasks.
 
 ## Installation
 
