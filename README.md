@@ -1,19 +1,13 @@
 # Generator create-redux-app
 
-[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)
-
-[![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)
-
-[![bitHound Code](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app)
-
-[![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app)
+[![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)[![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)[![bitHound Code](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app)[![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app)
 
 > This generator add **Redux** and some useful tools like **styled-component** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
 Below you will find some information on how to perform common tasks.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) (**You’ll need to have Node >= 4 on your machine** [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -28,7 +22,6 @@ cd project-name
 yo create-redux-app
 ```
 
-**You’ll need to have Node >= 4 on your machine**.
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
