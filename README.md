@@ -1,4 +1,4 @@
-# Create Redux App
+# Generator create-redux-app
 
 [![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm)
 
@@ -291,7 +291,7 @@ over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
 out into JS where we believe those features belong.
 
-If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/delvallejonatan/create-redux-app#adding-a-css-preprocessor-sass-less-etc)
+If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Generators
@@ -313,4 +313,4 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-[MIT License](https://github.com/delvallejonatan/create-redux-app/blob/master/LICENSE)
+[MIT License](https://github.com/delvallejonatan/generator-create-redux-app/blob/master/LICENSE)

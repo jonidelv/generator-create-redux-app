@@ -2,7 +2,7 @@
   "name": "generator-create-redux-app",
   "version": "0.0.1",
   "description": "Add Redux and Generators in top of create-react-app",
-  "homepage": "https://github.com/delvallejonatan/create-redux-app",
+  "homepage": "https://github.com/delvallejonatan/generator-create-redux-app",
   "author": {
     "name": "delvallejonatan",
     "email": "delvallejonatan@gmail.com"
@@ -61,11 +61,11 @@
     "release": "np"
   },
   "bugs": {
-    "url": "https://github.com/delvallejonatan/create-redux-app/issues"
+    "url": "https://github.com/delvallejonatan/generator-create-redux-app/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/delvallejonatan/create-redux-app.git"
+    "url": "git+https://github.com/delvallejonatan/generator-create-redux-app.git"
   },
   "license": "MIT"
 }
