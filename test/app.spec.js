@@ -1,8 +1,8 @@
 /* global describe before it */
 
 const helpers = require('yeoman-test');
-const assert  = require('yeoman-assert');
-const path    = require('path');
+const assert = require('yeoman-assert');
+const path  = require('path');
 
 describe('generator-create-redux-app', () => {
   describe('Run yeoman generator-create-redux-app ', () => {

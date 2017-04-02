@@ -54,7 +54,6 @@
     }
   },
   "scripts": {
-    "prepublish": "npm test",
     "test": "mocha --bail test/*.spec.js",
     "eslint": "eslint . --ext .js",
     "precommit": "npm run eslint",
