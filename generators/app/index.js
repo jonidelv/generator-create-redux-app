@@ -7,8 +7,8 @@ const projectGenerator = Generator.extend({
   prompting: {
     welcome() {
       this.log(yosay('\'Allo \'allo! This generator add Redux, ' +
-      'styled-components and some useful tools like' +
-      'auto-generate boilerplate code to the most common' +
+      'styled-components and some useful tools like ' +
+      'auto-generate boilerplate code to the most common ' +
       'React starter Create React App'));
     },
 
