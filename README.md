@@ -78,7 +78,6 @@ Your project folders should look like this:
 ```
 my-app/
   README.md
-  node_modules/
   package.json
   yarn.lock
   docs/
@@ -167,12 +166,15 @@ To Export Components or Containers there is an `index.js` file in each root fold
 ### Import
 To import Components or Containers doit like follow:
   - Inside the same folder (Components/Containers) <br>
-    `import Comp1 from './Comp1'`<br>
-    `import Cont1 from './Cont1'`
+    ```
+    import Comp1 from './Comp1'
+    import Cont1 from './Cont1'
+    ```
   - Outside the same folder (Components/Containers) <br>
-    `import { Comp1 } from '../components'`<br>
-    `import { Cont1 } from '../containers'`
-
+    ```
+    import { Comp1 } from '../components'
+    import { Cont1 } from '../containers'
+    ```
 
 ## Git Hooks
 
