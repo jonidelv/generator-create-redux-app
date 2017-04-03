@@ -1,6 +1,6 @@
 {
   "name": "generator-create-redux-app",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Add Redux, styled-components and Generators in top of create-react-app",
   "homepage": "https://github.com/delvallejonatan/generator-create-redux-app",
   "author": {
