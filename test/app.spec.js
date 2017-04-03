@@ -26,6 +26,9 @@ describe('generator-create-redux-app', () => {
       desc : 'generates a docs folder',
       files: ['docs'],
     }, {
+      desc : 'generates a generators folder',
+      files: ['generators'],
+    }, {
       desc : 'generates a src folder',
       files: ['src'],
     }, {
