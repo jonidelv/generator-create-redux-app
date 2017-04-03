@@ -1,11 +1,11 @@
 # Generator create-redux-app
 
-[![Build Status](https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master)](https://travis-ci.org/delvallejonatan/generator-create-redux-app) 
+[![Build Status](https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master)](https://travis-ci.org/delvallejonatan/generator-create-redux-app)
 [![bitHound Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/dependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm) [![bitHound Dev Dependencies](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/devDependencies.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/master/dependencies/npm) [![bitHound Code](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/delvallejonatan/generator-create-redux-app) [![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app)
 
 [![NPM](https://nodei.co/npm/generator-create-redux-app.png?downloads=true)](https://nodei.co/npm/generator-create-redux-app/)
 
-> This generator add **Redux** and some useful tools like **styled-component** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
+> This generator add **Redux** and some useful tools like **styled-components** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
 Below you will find some information on how to perform common tasks.
 
 ## Installation
@@ -49,6 +49,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+### `npm run generate`
+
+Allows you to auto-generate boilerplate code for common parts of your
+application, specifically `component`s and `container`s.
 
 
 ## User Guide
@@ -233,7 +238,7 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 
 ## Styled Components
 
-`styled-components` allow you to write actual CSS code in your JavaScript to style your components,
+[styled-components](https://styled-components.com/) allow you to write actual CSS code in your JavaScript to style your components,
 removing the mapping between components and styles.
 
 See the
@@ -299,7 +304,7 @@ npm run generate
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`.
+generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
 
 
 ## Create React App config

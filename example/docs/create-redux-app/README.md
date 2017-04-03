@@ -1,10 +1,10 @@
-# Create Redux App
+# Generator create-redux-app
 
 This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/generator-create-redux-app). Here you can find information on how to perform common tasks.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 4 on your machine**  [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -14,10 +14,11 @@ npm install -g generator-create-redux-app
 Then generate your new project:
 
 ```bash
+mkdir project-name
+cd project-name
 yo create-redux-app
 ```
 
-**You’ll need to have Node >= 4 on your machine**.
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
@@ -42,6 +43,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
+### `npm run generate`
+
+Allows you to auto-generate boilerplate code for common parts of your
+application, specifically `component`s and `container`s.
 
 
 ## User Guide
@@ -226,7 +232,7 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 
 ## Styled Components
 
-`styled-components` allow you to write actual CSS code in your JavaScript to style your components,
+[styled-components](https://styled-components.com/) allow you to write actual CSS code in your JavaScript to style your components,
 removing the mapping between components and styles.
 
 See the
@@ -280,7 +286,7 @@ over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
 out into JS where we believe those features belong.
 
-If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/delvallejonatan/create-redux-app#adding-a-css-preprocessor-sass-less-etc)
+If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Generators
@@ -292,7 +298,7 @@ npm run generate
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate container`)
+generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
 
 
 ## Create React App config
@@ -302,12 +308,4 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-MIT © [delvallejonatan](http://joni.website)
-
-
-[npm-image]: https://badge.fury.io/js/generator-create-redux-app.svg
-[npm-url]: https://npmjs.org/package/generator-create-redux-app
-[travis-image]: https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master
-[travis-url]: https://travis-ci.org/delvallejonatan/generator-create-redux-app
-[daviddm-image]: https://david-dm.org/delvallejonatan/generator-create-redux-app.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/delvallejonatan/generator-create-redux-app
+[MIT License](https://github.com/delvallejonatan/generator-create-redux-app/blob/master/LICENSE)

@@ -1,4 +1,4 @@
-# Create Redux App
+# Generator create-redux-app
 
 This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/generator-create-redux-app). Here you can find information on how to perform common tasks.
 
