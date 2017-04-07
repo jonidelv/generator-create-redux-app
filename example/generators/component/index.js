@@ -10,7 +10,12 @@ module.exports = {
     name: 'type',
     message: 'Select the type of component',
     default: 'Stateless Function',
-    choices: () => ['Stateless Function', 'ES6 Class (Pure)', 'ES6 Class'],
+    choices: () => [
+      'Stateless Function (Pure)',
+      'Stateless Function',
+      'ES6 Class (Pure)',
+      'ES6 Class',
+    ],
   }, {
     type: 'input',
     name: 'name',
@@ -41,6 +46,10 @@ module.exports = {
       }
       case 'Stateless Function': {
         componentTemplate = './component/stateless.js.hbs'
+        break
+      }
+      case 'Stateless Function (Pure)': {
+        componentTemplate = './component/stateless.pure.js.hbs'
         break
       }
       default: {

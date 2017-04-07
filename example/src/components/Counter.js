@@ -1,4 +1,10 @@
 import React, { PropTypes } from 'react'
+import pure from 'recompose/pure'
+import styled from 'styled-components'
+
+const Intro = styled.p`
+  font-size: large;
+`
 
 function Counter({
   increment,
@@ -8,10 +14,10 @@ function Counter({
 }) {
   return (
     <section>
-      <p className="intro">
+      <Intro>
         To get started, edit <code>src/routes/index.js </code>
         and save to reload.
-      </p>
+      </Intro>
       <p>
         Clicked: {counter} times
         {' '}
@@ -32,4 +38,4 @@ Counter.propTypes = {
   counter: PropTypes.number.isRequired,
 }
 
-export default Counter
+export default pure(Counter)

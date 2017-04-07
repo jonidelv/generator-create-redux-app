@@ -4,7 +4,7 @@ This project was bootstrapped with [Create Redux App](https://github.com/delvall
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 4 on your machine**  [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -14,10 +14,11 @@ npm install -g generator-create-redux-app
 Then generate your new project:
 
 ```bash
+mkdir project-name
+cd project-name
 yo create-redux-app
 ```
 
-**You’ll need to have Node >= 4 on your machine**.
 Once the installation is done, you can run some commands inside the project folder:
 
 ### `npm start` or `yarn start`
@@ -43,6 +44,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
+### `npm run generate`
+
+Allows you to auto-generate boilerplate code for common parts of your
+application, specifically `component`s and `container`s.
+
 
 ## User Guide
 
@@ -54,7 +60,10 @@ Your app is ready to be deployed!
 - [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
+- [Can I use Sass with this boilerplate?](#can-i-use-sass-with-this-boilerplate?)
 - [Generators](#generators)
+- [Reselect](#reselect)
+- [Redux Actions](redux-actions)
 - [Create React App config](#create-react-app-config)
 
 
@@ -66,7 +75,6 @@ Your project folders should look like this:
 ```
 my-app/
   README.md
-  node_modules/
   package.json
   yarn.lock
   docs/
@@ -129,7 +137,13 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 
 ## Yarn
 
-[Yarn](https://yarnpkg.com/en/) is a package manager for your code. It's like npm but fuster and if you've installed a package before, you can install it again without any internet connection.
+[Yarn](https://yarnpkg.com/en/) is a package manager for your code. Fast, reliable, and secure dependency management.<br>
+
+**Fast:** Yarn caches every package it downloads so it never needs to download the same package again. It also parallelizes operations to maximize resource utilization so install times are faster than ever.
+
+**Reliable:** Using a detailed, concise lockfile format and a deterministic algorithm for installs, Yarn is able to guarantee that an install that worked on one system will work exactly the same way on any other system.
+
+**Secure:** Yarn uses checksums to verify the integrity of every installed package before its code is executed.
 
 ### Usage
 
@@ -155,12 +169,15 @@ To Export Components or Containers there is an `index.js` file in each root fold
 ### Import
 To import Components or Containers doit like follow:
   - Inside the same folder (Components/Containers) <br>
-    `import Comp1 from './Comp1'`<br>
-    `import Cont1 from './Cont1'`
+    ```
+    import Comp1 from './Comp1'
+    import Cont1 from './Cont1'
+    ```
   - Outside the same folder (Components/Containers) <br>
-    `import { Comp1 } from '../components'`<br>
-    `import { Cont1 } from '../containers'`
-
+    ```
+    import { Comp1 } from '../components'
+    import { Cont1 } from '../containers'
+    ```
 
 ## Git Hooks
 
@@ -226,7 +243,7 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 
 ## Styled Components
 
-`styled-components` allow you to write actual CSS code in your JavaScript to style your components,
+[styled-components](https://styled-components.com/) allow you to write actual CSS code in your JavaScript to style your components,
 removing the mapping between components and styles.
 
 See the
@@ -272,7 +289,8 @@ You render them like so:
 For further examples see the
 [official documentation](https://github.com/styled-components/styled-components).
 
-### Can I use Sass, Less with this boilerplate?
+
+## Can I use Sass with this boilerplate?
 
 Yes, although we advise against it and **do not support this**. We selected
 [`styled-components`](https://github.com/styled-components/styled-components)
@@ -280,7 +298,7 @@ over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
 out into JS where we believe those features belong.
 
-If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/delvallejonatan/create-redux-app#adding-a-css-preprocessor-sass-less-etc)
+If you _really_ still want (or need) to use Sass [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Generators
@@ -292,7 +310,41 @@ npm run generate
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate container`)
+generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
+
+
+##Reselect
+
+To prevent useless renders in (Redux) connected components, you must also make sure that the mapStateToProps function doesn’t return new objects each time it is called.
+The problem is that each time mapStateToProps runs, it returns a new object, even if the underlying objects didn’t change. As a consequence, the component re renders every time something in the state changes — while id should only render if the part of the state we are requiring change.<br>
+
+[Reselect](https://github.com/reactjs/reselect) solves this problem by using memoization. Instead of computing the props directly in mapStateToProps, you use a selector from reselect, which returns the same output if the input didn’t change.
+
+
+##Recompose
+
+Because a need of `shouldComponentUpdate`, sometime you have to transform a simple, functional component to a class-based component. This adds more lines of code, and every line of code has a cost — to write, to debug, and to maintain.
+Fortunately, you can implement the `shouldComponentUpdate` logic in a higher-order component (HOC) thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
+Now instead  of export the component we can do `export default pure(componentName)` an this will be pure without transforming to a class-based component.
+
+
+##Redux Actions
+
+Flux standard action (FSA) defines four properties that are allowed on an action:
+  - type: Required. A string or Symbol indicating the action type.
+  - payload: Optional. Any value or object containing data related to the action.
+  - error: Optional. A boolean that, when true, indicates that the payload is an Error object.
+  - meta: Optional. Any value or object containing data that isn’t part of the payload<br>
+If you adopt FSA (and you will, right?), then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.<br>
+
+```js
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
+import { createAction } from 'redux-actions'
+
+export const increment = createAction(INCREMENT_COUNTER)
+
+export const decrement = createAction(DECREMENT_COUNTER)
+```
 
 
 ## Create React App config
@@ -302,12 +354,4 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-MIT © [delvallejonatan](http://joni.website)
-
-
-[npm-image]: https://badge.fury.io/js/generator-create-redux-app.svg
-[npm-url]: https://npmjs.org/package/generator-create-redux-app
-[travis-image]: https://travis-ci.org/delvallejonatan/generator-create-redux-app.svg?branch=master
-[travis-url]: https://travis-ci.org/delvallejonatan/generator-create-redux-app
-[daviddm-image]: https://david-dm.org/delvallejonatan/generator-create-redux-app.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/delvallejonatan/generator-create-redux-app
+[MIT License](https://github.com/delvallejonatan/generator-create-redux-app/blob/master/LICENSE)

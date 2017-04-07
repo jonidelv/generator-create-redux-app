@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Counter } from '../components'
 import * as CounterActions from '../actions/CounterActions'
+import { createStructuredSelector, createSelector } from 'reselect'
 
 class CounterContainer extends React.Component {
+
+  static propTypes = {
+    increment: PropTypes.func.isRequired,
+    decrement: PropTypes.func.isRequired,
+    incrementIfOdd: PropTypes.func.isRequired,
+    counter: PropTypes.number.isRequired,
+  }
+
   increment = () => {
     this.props.increment()
   }
@@ -29,11 +38,12 @@ class CounterContainer extends React.Component {
   }
 }
 
-function mapStateToProps (state) {
-  return {
-    counter: state.counter,
-  }
-}
+const mapStateToProps = createStructuredSelector({
+  counter: createSelector(
+    (state) => state.counter,
+    (counterState) => counterState
+  ),
+})
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators(CounterActions, dispatch)

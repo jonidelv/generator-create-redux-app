@@ -35,6 +35,14 @@ module.exports = {
     when: (value) => {
       return value.addRedux ? true : false
     },
+  }, {
+    type: 'confirm',
+    name: 'addSelectors',
+    message: 'Do you want to include Reselect library to add Selectors ?',
+    default: false,
+    when: (value) => {
+      return value.addRedux ? true : false
+    },
   }],
   actions: (data) => {
     // Generate index.js and index.test.js

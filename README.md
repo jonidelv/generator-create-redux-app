@@ -5,8 +5,9 @@
 
 [![NPM](https://nodei.co/npm/generator-create-redux-app.png?downloads=true)](https://nodei.co/npm/generator-create-redux-app/)
 
-> This generator add **Redux** and some useful tools like **styled-components** and **auto-generate boilerplate code**, to the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
+> This generator add **Redux**, **styled-components** and other useful libraries and tools like **auto-generate boilerplate code**, in top of the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
 Below you will find some information on how to perform common tasks.
+
 
 ## Installation
 
@@ -66,7 +67,10 @@ application, specifically `component`s and `container`s.
 - [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
+- [Can I use Sass with this boilerplate?](#can-i-use-sass-with-this-boilerplate?)
 - [Generators](#generators)
+- [Reselect](#reselect)
+- [Redux Actions](redux-actions)
 - [Create React App config](#create-react-app-config)
 
 
@@ -140,7 +144,13 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 
 ## Yarn
 
-[Yarn](https://yarnpkg.com/en/) is a package manager for your code. It's like npm but fuster and if you've installed a package before, you can install it again without any internet connection.
+[Yarn](https://yarnpkg.com/en/) is a package manager for your code. Fast, reliable, and secure dependency management.<br>
+
+**Fast:** Yarn caches every package it downloads so it never needs to download the same package again. It also parallelizes operations to maximize resource utilization so install times are faster than ever.
+
+**Reliable:** Using a detailed, concise lockfile format and a deterministic algorithm for installs, Yarn is able to guarantee that an install that worked on one system will work exactly the same way on any other system.
+
+**Secure:** Yarn uses checksums to verify the integrity of every installed package before its code is executed.
 
 ### Usage
 
@@ -286,7 +296,8 @@ You render them like so:
 For further examples see the
 [official documentation](https://github.com/styled-components/styled-components).
 
-### Can I use Sass, Less with this boilerplate?
+
+## Can I use Sass with this boilerplate?
 
 Yes, although we advise against it and **do not support this**. We selected
 [`styled-components`](https://github.com/styled-components/styled-components)
@@ -294,7 +305,7 @@ over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
 out into JS where we believe those features belong.
 
-If you _really_ still want (or need) to use Sass or Less [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+If you _really_ still want (or need) to use Sass [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
 
 ## Generators
@@ -307,6 +318,40 @@ Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
 generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
+
+
+##Reselect
+
+To prevent useless renders in (Redux) connected components, you must also make sure that the mapStateToProps function doesn’t return new objects each time it is called.
+The problem is that each time mapStateToProps runs, it returns a new object, even if the underlying objects didn’t change. As a consequence, the component re renders every time something in the state changes — while id should only render if the part of the state we are requiring change.<br>
+
+[Reselect](https://github.com/reactjs/reselect) solves this problem by using memoization. Instead of computing the props directly in mapStateToProps, you use a selector from reselect, which returns the same output if the input didn’t change.
+
+
+##Recompose
+
+Because a need of `shouldComponentUpdate`, sometime you have to transform a simple, functional component to a class-based component. This adds more lines of code, and every line of code has a cost — to write, to debug, and to maintain.
+Fortunately, you can implement the `shouldComponentUpdate` logic in a higher-order component (HOC) thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
+Now instead  of export the component we can do `export default pure(componentName)` an this will be pure without transforming to a class-based component.
+
+
+##Redux Actions
+
+Flux standard action (FSA) defines four properties that are allowed on an action:
+  - type: Required. A string or Symbol indicating the action type.
+  - payload: Optional. Any value or object containing data related to the action.
+  - error: Optional. A boolean that, when true, indicates that the payload is an Error object.
+  - meta: Optional. Any value or object containing data that isn’t part of the payload<br>
+If you adopt FSA (and you will, right?), then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.<br>
+
+```js
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
+import { createAction } from 'redux-actions'
+
+export const increment = createAction(INCREMENT_COUNTER)
+
+export const decrement = createAction(DECREMENT_COUNTER)
+```
 
 
 ## Create React App config
