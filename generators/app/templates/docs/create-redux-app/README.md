@@ -63,7 +63,8 @@ application, specifically `component`s and `container`s.
 - [Can I use Sass with this boilerplate?](#can-i-use-sass-with-this-boilerplate?)
 - [Generators](#generators)
 - [Reselect](#reselect)
-- [Redux Actions](redux-actions)
+- [Recompose](#recompose)
+- [Redux Actions](#redux-actions)
 - [Create React App config](#create-react-app-config)
 
 
@@ -313,7 +314,7 @@ also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
 generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
 
 
-##Reselect
+## Reselect
 
 To prevent useless renders in (Redux) connected components, you must also make sure that the mapStateToProps function doesn’t return new objects each time it is called.
 The problem is that each time mapStateToProps runs, it returns a new object, even if the underlying objects didn’t change. As a consequence, the component re renders every time something in the state changes — while id should only render if the part of the state we are requiring change.<br>
@@ -321,14 +322,14 @@ The problem is that each time mapStateToProps runs, it returns a new object, eve
 [Reselect](https://github.com/reactjs/reselect) solves this problem by using memoization. Instead of computing the props directly in mapStateToProps, you use a selector from reselect, which returns the same output if the input didn’t change.
 
 
-##Recompose
+## Recompose
 
 Because a need of `shouldComponentUpdate`, sometime you have to transform a simple, functional component to a class-based component. This adds more lines of code, and every line of code has a cost — to write, to debug, and to maintain.
 Fortunately, you can implement the `shouldComponentUpdate` logic in a higher-order component (HOC) thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
 Now instead  of export the component we can do `export default pure(componentName)` an this will be pure without transforming to a class-based component.
 
 
-##Redux Actions
+## Redux Actions
 
 Flux standard action (FSA) defines four properties that are allowed on an action:
   - type: Required. A string or Symbol indicating the action type.

@@ -70,7 +70,8 @@ application, specifically `component`s and `container`s.
 - [Can I use Sass with this boilerplate?](#can-i-use-sass-with-this-boilerplate?)
 - [Generators](#generators)
 - [Reselect](#reselect)
-- [Redux Actions](redux-actions)
+- [Recompose](#recompose)
+- [Redux Actions](#redux-actions)
 - [Create React App config](#create-react-app-config)
 
 
