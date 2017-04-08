@@ -1,4 +1,4 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/actionTypes'
 import { createAction } from 'redux-actions'
 
 export const increment = createAction(INCREMENT_COUNTER)

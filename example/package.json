@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "description": "example for create redux app",
+  "description": "example for create-redux-app",
   "version": "0.1.0",
   "author": "delvallejonatan ",
   "dependencies": {

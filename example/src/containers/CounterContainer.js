@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Counter } from '../components'
-import * as CounterActions from '../actions/CounterActions'
+import * as CounterActions from '../actions/counter'
 import { createStructuredSelector, createSelector } from 'reselect'
 
 class CounterContainer extends React.Component {

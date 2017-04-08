@@ -75,9 +75,6 @@ Your project folders should look like this:
 
 ```
 my-app/
-  README.md
-  package.json
-  yarn.lock
   docs/
   generators/
   public/
@@ -345,6 +342,16 @@ import { createAction } from 'redux-actions'
 export const increment = createAction(INCREMENT_COUNTER)
 
 export const decrement = createAction(DECREMENT_COUNTER)
+```
+More examples
+```js
+const inc = createAction(INCREMENT)
+inc() // { type: INCREMENT }
+inc(1)  // { type: INCREMENT, payload: 1 }
+
+const addUser = createAction(ADD_USER, (name, lastName) => ({name, lastName}) )
+addUser('John', 'Doe') // { type: ADD_USER, payload: { name: 'John', lastName: 'Doe' } }
+addUser(new Error('no user')) // { type: ADD_USER, error: true, payload: /* error */ }
 ```
 
 
