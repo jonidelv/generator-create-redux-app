@@ -54,7 +54,6 @@ application, specifically `component`s and `container`s.
 
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
-- [Yarn](#yarn)
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [ESLint](#eslint)
@@ -71,7 +70,7 @@ application, specifically `component`s and `container`s.
 ## Folder Structure
 
 create-redux-app override create-redux-app folder structure.
-Your project folders should look like this:
+Once the generator runs your project folders should look like this:
 
 ```
 my-app/
@@ -133,32 +132,11 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
   - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 
-## Yarn
-
-[Yarn](https://yarnpkg.com/en/) is a package manager for your code. Fast, reliable, and secure dependency management.<br>
-
-**Fast:** Yarn caches every package it downloads so it never needs to download the same package again. It also parallelizes operations to maximize resource utilization so install times are faster than ever.
-
-**Reliable:** Using a detailed, concise lockfile format and a deterministic algorithm for installs, Yarn is able to guarantee that an install that worked on one system will work exactly the same way on any other system.
-
-**Secure:** Yarn uses checksums to verify the integrity of every installed package before its code is executed.
-
-### Usage
-
-#### `yarn install` or `yarn`
-Installs all the dependencies defined in a package.json file.
-
-#### `yarn add`
-Adds a package to use in your current package.
-
-#### `yarn remove`
-Removes an unused package from your current package.
-
-## Import Export Containers and Components
+## Import / Export Containers and Components
 
 ### Export
 To Export Components or Containers there is an `index.js` file in each root folder so you have to export it there first in order to import outside the root folder.
-  ```
+  ```js
   index.js/
     export { default as Comp1 } from './Comp1'
     export { default as Comp2 } from './Comp2'
@@ -167,12 +145,12 @@ To Export Components or Containers there is an `index.js` file in each root fold
 ### Import
 To import Components or Containers doit like follow:
   - Inside the same folder (Components/Containers) <br>
-    ```
+    ```js
     import Comp1 from './Comp1'
     import Cont1 from './Cont1'
     ```
   - Outside the same folder (Components/Containers) <br>
-    ```
+    ```js
     import { Comp1 } from '../components'
     import { Cont1 } from '../containers'
     ```
@@ -194,7 +172,7 @@ We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is 
 
 ### Uninstall
 
-```
+```bash
 npm uninstall husky --save-dev
 ```
 And delete the `pre` scripts in`package.json`
@@ -202,7 +180,7 @@ And delete the `pre` scripts in`package.json`
 
 ## ESLint
 
-You can add/remove rules or even extend plugins if you want. We extend `react-app` and have some specific rules.
+You can add/remove rules or even extend plugins if you want. We extend **react-app** ESLint rules.
 ```
 // Edit package.json
 
@@ -318,22 +296,96 @@ The problem is that each time mapStateToProps runs, it returns a new object, eve
 
 [Reselect](https://github.com/reactjs/reselect) solves this problem by using memoization. Instead of computing the props directly in mapStateToProps, you use a selector from reselect, which returns the same output if the input didn’t change.
 
+### Usage
+
+[How to use it](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector) examples:
+
+- Without Reselect
+  ```js
+  function mapStateToProps (state) {
+    return {
+      counter: state.counter
+    }
+  }
+  ```
+- With Reselect
+  ```js
+  import { createStructuredSelector, createSelector } from 'reselect'
+
+  const mapStateToProps = createStructuredSelector({
+    counter: createSelector(
+      (state) => state.counter,
+      (counterState) => counterState
+    ),
+  })
+  ```
+
+### Uninstall
+
+```bash
+npm uninstall reselect --save
+```
+**Note**<br>
+If you do this generating a container with a selector feature
+will throw an error because it needs reselect to work.
+
 
 ## Recompose
 
 Because a need of `shouldComponentUpdate`, sometime you have to transform a simple, functional component to a class-based component. This adds more lines of code, and every line of code has a cost — to write, to debug, and to maintain.
-Fortunately, you can implement the `shouldComponentUpdate` logic in a higher-order component (HOC) thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
+Fortunately, you can implement the `shouldComponentUpdate` logic thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
 Now instead  of export the component we can do `export default pure(componentName)` an this will be pure without transforming to a class-based component.
+
+### Usage
+
+Component will only update for specific keys.
+```js
+import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’;
+
+const componentName = ({ resource, ids, data, children }) => (
+    ...
+);
+export default onlyUpdateForKeys([‘ids’, ‘data’])(componentName);
+```
+
+Be more specific and target only the props that I know may change
+```js
+import shouldUpdate from ‘recompose/shouldUpdate’;
+
+const componentName = ({ resource, ids, data, children }) => (
+    ...
+);
+const checkPropsChange = (props, nextProps) =>
+ (nextProps.ids !== props.ids ||
+  nextProps.data !== props.data);
+export default shouldUpdate(checkPropsChange)(componentName);
+```
+
+Make your component pure even if is not a class based component
+```js
+import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’;
+
+const componentName = ({ resource, ids, data, children }) => (
+    ...
+);
+export default pure(componentName);
+```
+
+### Uninstall
+
+```bash
+npm uninstall recompose --save
+```
+**Note**<br>
+If you do this recompose generating a pure component
+will throw an error because it needs recompose to work.
 
 
 ## Redux Actions
 
-Flux standard action (FSA) defines four properties that are allowed on an action:
-  - type: Required. A string or Symbol indicating the action type.
-  - payload: Optional. Any value or object containing data related to the action.
-  - error: Optional. A boolean that, when true, indicates that the payload is an Error object.
-  - meta: Optional. Any value or object containing data that isn’t part of the payload<br>
-If you adopt FSA (and you will, right?), then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.<br>
+If you adopt Flux standard action (FSA) and you will, right ?, then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.
+
+### Usage
 
 ```js
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
@@ -352,6 +404,11 @@ inc(1)  // { type: INCREMENT, payload: 1 }
 const addUser = createAction(ADD_USER, (name, lastName) => ({name, lastName}) )
 addUser('John', 'Doe') // { type: ADD_USER, payload: { name: 'John', lastName: 'Doe' } }
 addUser(new Error('no user')) // { type: ADD_USER, error: true, payload: /* error */ }
+```
+### Uninstall
+
+```bash
+npm uninstall redux-actions --save
 ```
 
 
