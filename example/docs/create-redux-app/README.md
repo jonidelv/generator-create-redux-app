@@ -54,7 +54,7 @@ application, specifically `component`s and `container`s.
 
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
-- [Import Export Containers and Components](#import-export-containers-and-components)
+- [Import / Export Containers and Components](#import-/-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [ESLint](#eslint)
 - [Routing](#routing)
@@ -298,7 +298,8 @@ The problem is that each time mapStateToProps runs, it returns a new object, eve
 
 ### Usage
 
-[How to use it](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector) examples:
+[documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector)<br>
+Examples:
 
 - Without Reselect
   ```js
