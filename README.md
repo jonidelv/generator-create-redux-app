@@ -66,7 +66,7 @@ application, specifically `component`s and `container`s.
 - [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
-- [Adding Sass Preprocessor](#adding-sass -preprocessor)
+- [Adding Sass Preprocessor](#adding-sass-preprocessor)
 - [Generators](#generators)
 - [Reselect](#reselect)
 - [Recompose](#recompose)
