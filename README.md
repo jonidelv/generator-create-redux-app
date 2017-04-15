@@ -61,7 +61,7 @@ application, specifically `component`s and `container`s.
 
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
-- [Import / Export Containers and Components](#import-/-export-containers-and-components)
+- [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [ESLint](#eslint)
 - [Routing](#routing)
@@ -139,7 +139,7 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
   - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 
-## Import / Export Containers and Components
+## Import Export Containers and Components
 
 ### Export
 To Export Components or Containers there is an `index.js` file in each root folder so you have to export it there first in order to import outside the root folder.
@@ -305,7 +305,6 @@ The problem is that each time mapStateToProps runs, it returns a new object, eve
 
 ### Usage
 
-[documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector)<br>
 Examples:
 
 - Without Reselect
@@ -327,6 +326,7 @@ Examples:
     ),
   })
   ```
+For further examples see the[official documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector).
 
 ### Uninstall
 
@@ -334,8 +334,7 @@ Examples:
 npm uninstall reselect --save
 ```
 **Note**<br>
-If you do this generating a container with a selector feature
-will throw an error because it needs reselect to work.
+If you uninstall reselect, generating a container with a selector feature from the command line (`npm run generate`) will throw an error.
 
 
 ## Recompose
@@ -385,8 +384,7 @@ export default pure(componentName);
 npm uninstall recompose --save
 ```
 **Note**<br>
-If you do this recompose generating a pure component
-will throw an error because it needs recompose to work.
+If you uninstall recompose, generating a pure component from the command line (`npm run generate`) will throw an error.
 
 
 ## Redux Actions

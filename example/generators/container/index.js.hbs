@@ -1,5 +1,6 @@
 {{#if addRedux}}
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as {{ actionsFile }} from '../actions/{{ actionsFile }}'
@@ -9,6 +10,7 @@ import { createStructuredSelector, createSelector } from 'reselect'
 {{/if}}
 {{#unless addRedux}}
 import React from 'react'
+import PropTypes from 'prop-types'
 {{/unless}}
 
 class {{ properCase name }} extends React.{{{ component }}} {
