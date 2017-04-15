@@ -66,7 +66,7 @@ application, specifically `component`s and `container`s.
 - [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
-- [Can I use Sass with this boilerplate?](#can-i-use-sass-with-this-boilerplate?)
+- [Adding Sass Preprocessor](#adding-sass -preprocessor)
 - [Generators](#generators)
 - [Reselect](#reselect)
 - [Recompose](#recompose)
@@ -273,9 +273,9 @@ For further examples see the
 [official documentation](https://github.com/styled-components/styled-components).
 
 
-## Can I use Sass with this boilerplate?
+## Adding Sass Preprocessor
 
-Yes, although we advise against it and **do not support this**. We selected
+Can I use Sass with this boilerplate? yes, although we advise against it and **do not support this**. We selected
 [`styled-components`](https://github.com/styled-components/styled-components)
 over Sass because its approach is more powerful: instead of trying to
 give a styling language programmatic abilities, it pulls logic and configuration
@@ -326,7 +326,7 @@ Examples:
     ),
   })
   ```
-For further examples see the[official documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector).
+For further examples see the [official documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector).
 
 ### Uninstall
 
