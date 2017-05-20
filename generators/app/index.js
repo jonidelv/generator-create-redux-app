@@ -48,6 +48,9 @@ const projectGenerator = Generator.extend({
         this.templatePath('public/index.html'),
         this.destinationPath('public/index.html'), {
           projectName: to.title(this.projectName),
+        },
+        this.destinationPath('public/manifest.json'), {
+          projectName: to.title(this.projectName),
         }
       );
       this.fs.copy(

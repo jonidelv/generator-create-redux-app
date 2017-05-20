@@ -23,6 +23,9 @@ describe('generator-create-redux-app', () => {
       desc : 'generates a favicon.ico file',
       files: ['public/favicon.ico'],
     }, {
+      desc : 'generates a manifest.json file',
+      files: ['public/manifest.json'],
+    }, {
       desc : 'generates a docs folder',
       files: ['docs'],
     }, {

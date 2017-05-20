@@ -11,7 +11,7 @@ Below you will find some information on how to perform common tasks.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 4 on your machine**  [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 6.10.3 on your machine**  [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -97,6 +97,7 @@ my-app/
     store/
     tests/
     styles/
+    utils/
     index.js
 ```
 
@@ -347,17 +348,17 @@ Now instead  of export the component we can do `export default pure(componentNam
 
 Component will only update for specific keys.
 ```js
-import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’;
+import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’
 
 const componentName = ({ resource, ids, data, children }) => (
     ...
 );
-export default onlyUpdateForKeys([‘ids’, ‘data’])(componentName);
+export default onlyUpdateForKeys([‘ids’, ‘data’])(componentName)
 ```
 
 Be more specific and target only the props that I know may change
 ```js
-import shouldUpdate from ‘recompose/shouldUpdate’;
+import shouldUpdate from ‘recompose/shouldUpdate’
 
 const componentName = ({ resource, ids, data, children }) => (
     ...
@@ -365,17 +366,17 @@ const componentName = ({ resource, ids, data, children }) => (
 const checkPropsChange = (props, nextProps) =>
  (nextProps.ids !== props.ids ||
   nextProps.data !== props.data);
-export default shouldUpdate(checkPropsChange)(componentName);
+export default shouldUpdate(checkPropsChange)(componentName)
 ```
 
 Make your component pure even if is not a class based component
 ```js
-import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’;
+import onlyUpdateForKeys from ‘recompose/pure
 
 const componentName = ({ resource, ids, data, children }) => (
     ...
 );
-export default pure(componentName);
+export default pure(componentName)
 ```
 
 ### Uninstall
