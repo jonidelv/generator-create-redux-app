@@ -29,7 +29,7 @@
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.3",
     "mocha": "^3.2.0",
-    "np": "^2.13.1",
+    "np": "^2.15.0",
     "nsp": "^2.6.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
