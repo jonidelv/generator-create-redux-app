@@ -1,6 +1,6 @@
 {
   "name": "generator-create-redux-app",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "description": "Add Redux, styled-components and other useful libraries like Generators in top of create-react-app",
   "homepage": "https://github.com/delvallejonatan/generator-create-redux-app",
   "author": {
@@ -29,7 +29,6 @@
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.3",
     "mocha": "^3.2.0",
-    "np": "^2.15.0",
     "nsp": "^2.6.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.6.0"
@@ -56,7 +55,7 @@
     "test": "mocha --bail test/*.spec.js",
     "eslint": "eslint . --ext .js",
     "precommit": "npm run eslint",
-    "release": "np"
+    "release": "npm publish"
   },
   "bugs": {
     "url": "https://github.com/delvallejonatan/generator-create-redux-app/issues"
