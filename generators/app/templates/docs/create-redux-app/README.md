@@ -364,7 +364,7 @@ export default shouldUpdate(checkPropsChange)(componentName)
 
 Make your component pure even if is not a class based component
 ```js
-import onlyUpdateForKeys from ‘recompose/pure
+import pure from ‘recompose/pure
 
 const componentName = ({ resource, ids, data, children }) => (
     ...
