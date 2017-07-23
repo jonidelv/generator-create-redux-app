@@ -2,7 +2,7 @@
   "name": "<%= projectName %>",
   "description": "<%= projectDescription %>",
   "version": "<%= projectVersion %>",
-  "author": "<%= authorName %> ",
+  "author": "<%= authorName %>",
   "dependencies": {
     "prop-types": "^15.5.0",
     "react": "^15.5.4",
