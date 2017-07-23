@@ -1,6 +1,6 @@
 # Generator create-redux-app
 
-This project was bootstrapped with [Create Redux App](https://github.com/delvallejonatan/generator-create-redux-app). Here you can find information on how to perform common tasks.
+This project was bootstrapped with [Create Redux App](https://github.com/jonidelv/generator-create-redux-app). Here you can find information on how to perform common tasks.
 
 ## Installation
 
@@ -419,4 +419,4 @@ You can find the most recent version of the create-react-app guide [here](https:
 
 ## License
 
-[MIT License](https://github.com/delvallejonatan/generator-create-redux-app/blob/master/LICENSE)
+[MIT License](https://github.com/jonidelv/generator-create-redux-app/blob/master/LICENSE)
