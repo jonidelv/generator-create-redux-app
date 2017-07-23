@@ -46,9 +46,9 @@
         "error",
         "always-multiline"
       ],
-      "react/jsx-space-before-closing": [
+      "react/jsx-tag-spacing": [
         2,
-        "always"
+        { "beforeSelfClosing": "always" }
       ],
       "react/jsx-closing-bracket-location": [
         2,

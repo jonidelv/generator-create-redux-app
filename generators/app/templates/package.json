@@ -48,7 +48,7 @@
       ],
       "react/jsx-tag-spacing": [
         2,
-        { "beforeSelfClosing": "always"}
+        { "beforeSelfClosing": "always" }
       ],
       "react/jsx-closing-bracket-location": [
         2,

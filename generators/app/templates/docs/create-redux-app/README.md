@@ -192,9 +192,9 @@ You can add/remove rules or even extend plugins if you want. We extend **react-a
       "error",
       "always-multiline"
     ],
-    "react/jsx-space-before-closing": [
+    "react/jsx-tag-spacing": [
       2,
-      "always"
+      { "beforeSelfClosing": "always" }
     ],
     "react/jsx-closing-bracket-location": [
       2,
