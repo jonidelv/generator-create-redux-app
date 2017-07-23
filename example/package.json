@@ -22,7 +22,7 @@
     "node-plop": "^0.5.5",
     "plop": "^1.7.4",
     "babel-eslint": "^7.2.3",
-    "eslint": "^4.3.0",
+    "eslint": "^3.19.0",
     "eslint-config-react-app": "^1.0.5",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
