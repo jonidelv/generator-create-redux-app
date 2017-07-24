@@ -22,15 +22,18 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^3.19.0",
+    "eslint-config-prettier": "^2.3.0",
     "eslint-config-react-app": "^1.0.5",
     "eslint-plugin-flowtype": "^2.35.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
+    "lint-staged": "^4.0.2",
     "mocha": "^3.4.2",
     "np": "^2.16.0",
     "nsp": "^2.6.3",
+    "prettier": "^1.5.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   },
@@ -39,24 +42,19 @@
     "yeoman-generator": "^1.1.1",
     "yosay": "^2.0.0"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "max-len": [
-        "error",
-        100
-      ]
-    }
-  },
   "scripts": {
     "test": "mocha --bail test/*.spec.js",
-    "eslint": "eslint . --ext .js",
-    "precommit": "npm run eslint",
+    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+    "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+    "precommit": "lint-staged",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "release": "np"
+  },
+  "lint-staged": {
+    "{,!(build)/**/}*.js": [
+      "npm run prettier -- --write",
+      "git add"
+    ]
   },
   "bugs": {
     "url": "https://github.com/jonidelv/generator-create-redux-app/issues"
