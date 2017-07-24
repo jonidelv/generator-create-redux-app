@@ -56,7 +56,7 @@ application, specifically `component`s and `container`s.
 - [Redux Dev Tools](#redux-dev-tools)
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
-- [Prettier](#Prettier)
+- [Prettier](#prettier)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
