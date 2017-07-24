@@ -63,7 +63,7 @@ application, specifically `component`s and `container`s.
 - [Redux Dev Tools](#redux-dev-tools)
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
-- [ESLint](#eslint)
+- [Prettier](#Prettier)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
@@ -165,15 +165,21 @@ To import Components or Containers doit like follow:
 
 ## Git Hooks
 
-We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run eslint to prevent bad commits. You can add more by editing the package.json.<br>
+We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run prettier to ensure good code format. You can also create a prepush hook.<br>
 ```
 // Edit package.json
 
 {
   "scripts": {
-    "precommit": "npm run lint",
+    "precommit": "lint-staged",
     "prepush": "whatever...",
     "...": "..."
+  },
+  "lint-staged": {
+    "{,!(build)/**/}*.js": [
+      "npm run prettier -- --write",
+      "git add"
+    ]
   }
 }
 ```
@@ -186,38 +192,46 @@ npm uninstall husky --save-dev
 And delete the `pre` scripts in`package.json`
 
 
-## ESLint
+## Prettier
 
-You can add/remove rules or even extend plugins if you want. We extend **react-app** ESLint rules.
+You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier runs in a precommit hooks to ensure good code formating.
 ```
 // Edit package.json
 
-"eslintConfig": {
-  "extends": "react-app",
-  "rules": {
-    "comma-dangle": [
-      "error",
-      "always-multiline"
-    ],
-    "react/jsx-space-before-closing": [
-      2,
-      "always"
-    ],
-    "react/jsx-closing-bracket-location": [
-      2,
-      "tag-aligned"
-    ],
-    "semi": [
-      "error",
-      "never"
-    ],
-    "max-len": [
-      "error",
-      80
-    ]
-  }
+"scripts": {
+  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+  "precommit": "lint-staged",
+  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+},
+"lint-staged": {
+  "{,!(build)/**/}*.js": [
+    "npm run prettier -- --write",
+    "git add"
+  ]
 }
 ```
+### Uninstall
+
+```bash
+npm uninstall eslint-config-prettier lint-staged prettier --save-dev
+```
+Delete
+```
+"scripts": {
+  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+  "precommit": "lint-staged",
+  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+},
+"lint-staged": {
+  "{,!(build)/**/}*.js": [
+    "npm run prettier -- --write",
+    "git add"
+  ]
+}
+```
+
 
 ## Routing
 

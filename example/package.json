@@ -21,13 +21,9 @@
   "devDependencies": {
     "node-plop": "^0.5.5",
     "plop": "^1.7.4",
-    "babel-eslint": "^7.2.3",
-    "eslint": "^3.19.0",
-    "eslint-config-react-app": "^1.0.5",
-    "eslint-plugin-flowtype": "^2.35.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "lint-staged": "^4.0.2",
+    "prettier": "^1.5.3",
     "husky": "^0.14.3"
   },
   "scripts": {
@@ -39,30 +35,22 @@
     "precommit": "npm run lint",
     "generate": "plop --plopfile generators/index.js"
   },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "react/jsx-tag-spacing": [
-        2,
-        { "beforeSelfClosing": "always" }
-      ],
-      "react/jsx-closing-bracket-location": [
-        2,
-        "tag-aligned"
-      ],
-      "semi": [
-        "error",
-        "never"
-      ],
-      "max-len": [
-        "error",
-        100
-      ]
-    }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+    "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+    "precommit": "lint-staged",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "generate": "plop --plopfile generators/index.js"
+  },
+  "lint-staged": {
+    "{,!(build)/**/}*.js": [
+      "npm run prettier -- --write",
+      "git add"
+    ]
   },
   "engines": {
     "npm": ">=4",
