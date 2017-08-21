@@ -54,6 +54,7 @@ application, specifically `component`s and `container`s.
 
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
+- [Absolute Paths](#absolute-paths)
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [Prettier](#prettier)
@@ -133,6 +134,23 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
   - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 
+## Absolute Paths
+
+  By default ES6 modules in create-react-app use relative paths, which is fine for cases where the files you’re importing are relatively close within the file tree
+  so if the file is in the same folder and next to the file you're importing from, just use relative paths like so:
+
+  ```js
+  import { createGoal } from ‘./actions’
+  import { selectAuth } from ‘./selectors’
+  ```
+  But using relative paths is a real pain when you start dealing with deeply nested tree structures because you end up with dot-dot syndrome. Because of the `.env` file at the root level now we can now do absolute path like this:
+
+  ```js
+  import { editUser } from ‘containers/AppContainer/actions’
+  import { selectAuth } from ‘containers/AppContainer/selectors
+  ```
+
+
 ## Import Export Containers and Components
 
 ### Export
@@ -155,6 +173,7 @@ To import Components or Containers doit like follow:
     import { Comp1 } from '../components'
     import { Cont1 } from '../containers'
     ```
+
 
 ## Git Hooks
 

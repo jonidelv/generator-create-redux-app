@@ -1,10 +1,12 @@
 {{#if addRedux}}
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as {{ actionsFile }} from '../actions/{{ actionsFile }}'
 {{/if}}
+
 {{#if addSelectors}}
 import { createStructuredSelector, createSelector } from 'reselect'
 {{/if}}
