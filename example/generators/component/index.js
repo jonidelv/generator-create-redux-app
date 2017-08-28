@@ -1,6 +1,3 @@
-/* eslint strict: ["off"] */
-'use strict'
-
 const componentExists = require('../utils/componentExists')
 
 module.exports = {
@@ -20,13 +17,28 @@ module.exports = {
     },
     {
       type: 'input',
+      name: 'fileDir',
+      message: 'What is the file directory, finished with /',
+      default: 'components/',
+      validate: value => {
+        if (/.+/.test(value)) {
+          return componentExists(value)
+            ? 'A component with this name already exists'
+            : true
+        }
+
+        return 'The file directory is required'
+      },
+    },
+    {
+      type: 'input',
       name: 'name',
       message: 'What should it be called?',
       default: 'Button',
       validate: value => {
         if (/.+/.test(value)) {
           return componentExists(value)
-            ? 'A component or container with this name already exists'
+            ? 'A component with this name already exists'
             : true
         }
 
@@ -35,7 +47,6 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.js and index.test.js
     let componentTemplate
 
     switch (data.type) {
@@ -63,7 +74,7 @@ module.exports = {
     const actions = [
       {
         type: 'add',
-        path: '../src/components/{{properCase name}}.js',
+        path: '../src/{{fileDir}}/{{properCase name}}.js',
         templateFile: componentTemplate,
         abortOnFail: true,
       },

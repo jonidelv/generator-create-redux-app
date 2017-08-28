@@ -1,8 +1,23 @@
-const componentExists = require('../utils/componentExists')
+const containerExists = require('../utils/containerExists')
 
 module.exports = {
   description: 'Add a container component',
   prompts: [
+    {
+      type: 'input',
+      name: 'fileDir',
+      message: 'What is the file directory, finished with /',
+      default: 'containers/',
+      validate: value => {
+        if (/.+/.test(value)) {
+          return containerExists(value)
+            ? 'A container with this name already exists'
+            : true
+        }
+
+        return 'The file directory is required'
+      },
+    },
     {
       type: 'input',
       name: 'name',
@@ -10,8 +25,8 @@ module.exports = {
       default: 'FormContainer',
       validate: value => {
         if (/.+/.test(value)) {
-          return componentExists(value)
-            ? 'A component or container with this name already exists'
+          return containerExists(value)
+            ? 'A container with this name already exists'
             : true
         }
 
@@ -51,11 +66,10 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.js and index.test.js
     const actions = [
       {
         type: 'add',
-        path: '../src/containers/{{properCase name}}.js',
+        path: '../src/{{fileDir}}{{properCase name}}.js',
         templateFile: './container/index.js.hbs',
         abortOnFail: true,
       },
