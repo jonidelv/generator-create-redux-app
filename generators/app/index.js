@@ -83,7 +83,7 @@ const projectGenerator = Generator.extend({
     },
 
     eslintrc() {
-      this.fs.copy(this.templatePath('eslintrc.json'), this.destinationPath('eslintrc.json'))
+      this.fs.copy(this.templatePath('eslintrc.json'), this.destinationPath('.eslintrc.json'))
     },
 
     env() {

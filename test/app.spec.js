@@ -58,7 +58,7 @@ describe('generator-create-redux-app', () => {
       },
       {
         desc: 'generates a eslintrc.json file',
-        files: ['eslintrc.json'],
+        files: ['.eslintrc.json'],
       },
       {
         desc: 'generates a .env file',

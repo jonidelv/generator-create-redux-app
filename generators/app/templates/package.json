@@ -26,10 +26,12 @@
     "prettier": "^1.7.0",
     "husky": "^0.14.3",
     "eslint": "^4.7.0",
+    "babel-eslint": "^8.0.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.3.0"
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-prettier": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -40,11 +42,11 @@
     "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
     "precommit": "lint-staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint": "eslint . --ext .js",
     "generate": "plop --plopfile generators/index.js"
   },
   "lint-staged": {
     "{,!(build)/**/}*.js": [
-      "eslint --fix",
       "npm run prettier -- --write",
       "git add"
     ]
