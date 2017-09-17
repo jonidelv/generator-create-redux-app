@@ -51,55 +51,39 @@ const projectGenerator = Generator.extend({
 
   writing: {
     public() {
-      this.fs.copyTpl(
-        this.templatePath('public/index.html'),
-        this.destinationPath('public/index.html'),
-        {
-          projectName: to.title(this.projectName),
-        }
-      )
-      this.fs.copyTpl(
-        this.templatePath('public/manifest.json'),
-        this.destinationPath('public/manifest.json'),
-        {
-          projectName: to.title(this.projectName),
-        }
-      )
-      this.fs.copy(
-        this.templatePath('public/favicon.ico'),
-        this.destinationPath('public/favicon.ico')
-      )
+      this.fs.copyTpl(this.templatePath('public/index.html'), this.destinationPath('public/index.html'), {
+        projectName: to.title(this.projectName),
+      })
+      this.fs.copyTpl(this.templatePath('public/manifest.json'), this.destinationPath('public/manifest.json'), {
+        projectName: to.title(this.projectName),
+      })
+      this.fs.copy(this.templatePath('public/favicon.ico'), this.destinationPath('public/favicon.ico'))
     },
 
     readme() {
-      this.fs.copyTpl(
-        this.templatePath('README.md'),
-        this.destinationPath('README.md'),
-        {
-          projectName: to.title(this.projectName),
-        }
-      )
+      this.fs.copyTpl(this.templatePath('README.md'), this.destinationPath('README.md'), {
+        projectName: to.title(this.projectName),
+      })
     },
 
     gitignore() {
-      this.fs.copy(
-        this.templatePath('gitignore'),
-        this.destinationPath('.gitignore')
-      )
+      this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'))
     },
 
     gitattributes() {
-      this.fs.copy(
-        this.templatePath('gitattributes'),
-        this.destinationPath('.gitattributes')
-      )
+      this.fs.copy(this.templatePath('gitattributes'), this.destinationPath('.gitattributes'))
     },
 
     editorconfig() {
-      this.fs.copy(
-        this.templatePath('editorconfig'),
-        this.destinationPath('.editorconfig')
-      )
+      this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'))
+    },
+
+    eslintignore() {
+      this.fs.copy(this.templatePath('eslintignore'), this.destinationPath('.eslintignore'))
+    },
+
+    eslintrc() {
+      this.fs.copy(this.templatePath('eslintrc.json'), this.destinationPath('eslintrc.json'))
     },
 
     env() {
@@ -107,10 +91,7 @@ const projectGenerator = Generator.extend({
     },
 
     generators() {
-      this.fs.copy(
-        this.templatePath('generators'),
-        this.destinationPath('generators')
-      )
+      this.fs.copy(this.templatePath('generators'), this.destinationPath('generators'))
     },
 
     docs() {
@@ -122,16 +103,12 @@ const projectGenerator = Generator.extend({
     },
 
     packageJSON() {
-      this.fs.copyTpl(
-        this.templatePath('package.json'),
-        this.destinationPath('package.json'),
-        {
-          projectName: this.projectName,
-          projectDescription: this.projectDescription,
-          projectVersion: this.projectVersion,
-          authorName: this.authorName,
-        }
-      )
+      this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), {
+        projectName: this.projectName,
+        projectDescription: this.projectDescription,
+        projectVersion: this.projectVersion,
+        authorName: this.authorName,
+      })
     },
   },
 

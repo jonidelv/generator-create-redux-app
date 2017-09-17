@@ -16,22 +16,27 @@
     "recompose": "^0.23.4",
     "reselect": "^3.0.1",
     "styled-components": "^2.0.0",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.13"
   },
   "devDependencies": {
     "node-plop": "^0.5.5",
     "plop": "^1.7.4",
-    "eslint-config-prettier": "^2.3.0",
-    "lint-staged": "^4.0.2",
-    "prettier": "^1.5.3",
-    "husky": "^0.14.3"
+    "eslint-config-prettier": "^2.5.0",
+    "lint-staged": "^4.2.1",
+    "prettier": "^1.7.0",
+    "husky": "^0.14.3",
+    "eslint": "^4.7.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
+    "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
     "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
     "precommit": "lint-staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
@@ -39,6 +44,7 @@
   },
   "lint-staged": {
     "{,!(build)/**/}*.js": [
+      "eslint --fix",
       "npm run prettier -- --write",
       "git add"
     ]

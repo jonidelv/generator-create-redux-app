@@ -53,6 +53,14 @@ describe('generator-create-redux-app', () => {
         files: ['.gitignore'],
       },
       {
+        desc: 'generates a .eslintignore file',
+        files: ['.eslintignore'],
+      },
+      {
+        desc: 'generates a eslintrc.json file',
+        files: ['eslintrc.json'],
+      },
+      {
         desc: 'generates a .env file',
         files: ['.env'],
       },
