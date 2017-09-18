@@ -1,13 +1,15 @@
 {
   "name": "generator-create-redux-app",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Add Redux, styled-components and other useful libraries like Generators in top of create-react-app",
   "homepage": "https://github.com/jonidelv/generator-create-redux-app",
   "author": {
     "name": "jonidelv",
     "email": "hi@jonidelv.me"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
   "keywords": [
     "redux",
@@ -44,7 +46,10 @@
     "release": "np"
   },
   "lint-staged": {
-    "{,!(build|generators)/**/}*.js": ["npm run prettier -- --write", "git add"]
+    "{,!(build|generators)/**/}*.js": [
+      "npm run prettier -- --write",
+      "git add"
+    ]
   },
   "bugs": {
     "url": "https://github.com/jonidelv/generator-create-redux-app/issues"
