@@ -174,7 +174,6 @@ To import Components or Containers doit like follow:
     import { Cont1 } from '../containers'
     ```
 
-
 ## Git Hooks
 
 We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run prettier to ensure good code format. You can also create a prepush hook.<br>
@@ -211,39 +210,18 @@ You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier 
 // Edit package.json
 
 "scripts": {
-  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
-  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+  "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
+  "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
   "precommit": "lint-staged",
-  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
+  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
 },
 "lint-staged": {
-  "{,!(build)/**/}*.js": [
+  "{,!(build|generators)/**/}*.js": [
     "npm run prettier -- --write",
     "git add"
   ]
 }
 ```
-### Uninstall
-
-```bash
-npm uninstall eslint-config-prettier lint-staged prettier --save-dev
-```
-Delete
-```
-"scripts": {
-  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
-  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
-  "precommit": "lint-staged",
-  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
-},
-"lint-staged": {
-  "{,!(build)/**/}*.js": [
-    "npm run prettier -- --write",
-    "git add"
-  ]
-}
-```
-
 
 ## Routing
 

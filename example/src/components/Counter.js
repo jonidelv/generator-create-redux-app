@@ -13,8 +13,7 @@ function Counter({ increment, incrementIfOdd, decrement, counter }) {
         and save to reload.
       </Intro>
       <p>
-        Clicked: {counter} times <button onClick={increment}>+</button>{' '}
-        <button onClick={decrement}>-</button>{' '}
+        Clicked: {counter} times <button onClick={increment}>+</button> <button onClick={decrement}>-</button>{' '}
         <button onClick={incrementIfOdd}>Increment if odd</button>
       </p>
     </section>

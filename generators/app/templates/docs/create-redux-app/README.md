@@ -211,32 +211,12 @@ You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier 
 
 "scripts": {
   "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
-  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+  "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
   "precommit": "lint-staged",
   "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
 },
 "lint-staged": {
-  "{,!(build)/**/}*.js": [
-    "npm run prettier -- --write",
-    "git add"
-  ]
-}
-```
-### Uninstall
-
-```bash
-npm uninstall eslint-config-prettier lint-staged prettier --save-dev
-```
-Delete
-```
-"scripts": {
-  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
-  "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
-  "precommit": "lint-staged",
-  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
-},
-"lint-staged": {
-  "{,!(build)/**/}*.js": [
+  "{,!(build|generators)/**/}*.js": [
     "npm run prettier -- --write",
     "git add"
   ]
