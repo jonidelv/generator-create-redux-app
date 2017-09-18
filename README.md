@@ -65,6 +65,7 @@ application, specifically `component`s and `container`s.
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [Prettier](#prettier)
+- [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
@@ -247,6 +248,39 @@ Delete
     "npm run prettier -- --write",
     "git add"
   ]
+}
+```
+
+## ESLint
+
+You can add/remove rules or even extend plugins if you want. We extend **airbnb** ESLint rules.
+```
+// Edit eslintrc.json
+
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "jest": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "DEBUG": false
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0
+  }
 }
 ```
 

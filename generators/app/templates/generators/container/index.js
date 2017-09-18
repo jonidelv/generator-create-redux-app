@@ -10,9 +10,7 @@ module.exports = {
       default: 'containers/',
       validate: value => {
         if (/.+/.test(value)) {
-          return containerExists(value)
-            ? 'A container with this name already exists'
-            : true
+          return containerExists(value) ? 'A container with this name already exists' : true
         }
 
         return 'The file directory is required'
@@ -25,9 +23,7 @@ module.exports = {
       default: 'FormContainer',
       validate: value => {
         if (/.+/.test(value)) {
-          return containerExists(value)
-            ? 'A container with this name already exists'
-            : true
+          return containerExists(value) ? 'A container with this name already exists' : true
         }
 
         return 'The name is required'
@@ -65,7 +61,7 @@ module.exports = {
       },
     },
   ],
-  actions: data => {
+  actions: () => {
     const actions = [
       {
         type: 'add',

@@ -7,9 +7,7 @@
     "name": "jonidelv",
     "email": "hi@jonidelv.me"
   },
-  "files": [
-    "generators"
-  ],
+  "files": ["generators"],
   "main": "generators/index.js",
   "keywords": [
     "redux",
@@ -40,16 +38,13 @@
   "scripts": {
     "test": "mocha --bail test/*.spec.js",
     "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
-    "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+    "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
     "precommit": "lint-staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "release": "np"
   },
   "lint-staged": {
-    "{,!(build)/**/}*.js": [
-      "npm run prettier -- --write",
-      "git add"
-    ]
+    "{,!(build|generators)/**/}*.js": ["npm run prettier -- --write", "git add"]
   },
   "bugs": {
     "url": "https://github.com/jonidelv/generator-create-redux-app/issues"

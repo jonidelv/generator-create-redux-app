@@ -38,18 +38,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
-    "format": "npm run prettier -- --write '{,!(build)/**/}*.js'",
+    "prettier":
+      "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
+    "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
     "precommit": "lint-staged",
-    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "eslint-check":
+      "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "eslint": "eslint . --ext .js",
     "generate": "plop --plopfile generators/index.js"
   },
   "lint-staged": {
-    "{,!(build)/**/}*.js": [
-      "npm run prettier -- --write",
-      "git add"
-    ]
+    "{,!(build|generators)/**/}*.js": ["npm run prettier -- --write", "git add"]
   },
   "engines": {
     "npm": ">=4",
