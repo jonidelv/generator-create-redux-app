@@ -40,7 +40,10 @@ class CounterContainer extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  counter: createSelector(state => state.counter, counterState => counterState),
+  counter: createSelector(
+    (state) => state.counter,
+    (counterState) => counterState
+  ),
 })
 
 function mapDispatchToProps(dispatch) {
