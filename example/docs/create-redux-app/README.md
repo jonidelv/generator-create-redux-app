@@ -210,10 +210,10 @@ You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier 
 // Edit package.json
 
 "scripts": {
-  "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
+  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
   "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
   "precommit": "lint-staged",
-  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
 },
 "lint-staged": {
   "{,!(build|generators)/**/}*.js": [
@@ -222,6 +222,7 @@ You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier 
   ]
 }
 ```
+
 
 ## Routing
 

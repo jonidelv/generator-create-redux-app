@@ -1,7 +1,7 @@
 # Example
 [![generator-create-redux-app](https://img.shields.io/badge/built%20with-generator--create--redux--app-brightgreen.svg)](https://github.com/jonidelv/generator-create-redux-app)
 
-This project was generated with [Create Redux App](https://github.com/jonidelv/create-redux-app). Refer to `docs/create-redux-app` to find more information on how to perform common tasks.
+This project was generated with [Create Redux App](https://github.com/jonidelv/generator-create-redux-app). Refer to `docs/create-redux-app` to find more information on how to perform common tasks.
 
 Once the installation is done, you can run some commands inside the project folder:
 
