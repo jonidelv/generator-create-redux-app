@@ -1,7 +1,6 @@
 # Generator create-redux-app
 
 [![Build Status](https://travis-ci.org/jonidelv/generator-create-redux-app.svg?branch=master)](https://travis-ci.org/jonidelv/generator-create-redux-app)
-[![bitHound Code](https://www.bithound.io/github/jonidelv/generator-create-redux-app/badges/code.svg)](https://www.bithound.io/github/jonidelv/generator-create-redux-app) [![npm](https://img.shields.io/npm/v/generator-create-redux-app.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/generator-create-redux-app)
 
 [![NPM](https://nodei.co/npm/generator-create-redux-app.png?downloads=true)](https://nodei.co/npm/generator-create-redux-app/)
 
