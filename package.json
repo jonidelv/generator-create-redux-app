@@ -1,6 +1,6 @@
 {
   "name": "generator-create-redux-app",
-  "version": "0.2.23",
+  "version": "0.2.24",
   "description": "Add Redux, styled-components and other useful libraries like Generators in top of create-react-app",
   "homepage": "https://github.com/jonidelv/generator-create-redux-app",
   "author": {
@@ -20,11 +20,11 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "growl": "^1.10.0",
     "mocha": "^3.4.2",
     "np": "^2.16.0",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.7.0",
-    "growl": "^1.10.0"
+    "yeoman-test": "^1.7.0"
   },
   "dependencies": {
     "to-case": "^2.0.0",
