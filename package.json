@@ -23,7 +23,8 @@
     "mocha": "^3.4.2",
     "np": "^2.16.0",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.7.0"
+    "yeoman-test": "^1.7.0",
+    "growl": "^1.10.0"
   },
   "dependencies": {
     "to-case": "^2.0.0",
