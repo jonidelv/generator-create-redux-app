@@ -58,6 +58,7 @@ application, specifically `component`s and `container`s.
 - [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [Prettier](#prettier)
+- [ESLint](#eslint)
 - [Routing](#routing)
 - [Styled Components](#styled-components)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
@@ -180,19 +181,11 @@ We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is 
 ```
 // Edit package.json
 
-{
-  "scripts": {
-    "precommit": "lint-staged",
-    "prepush": "whatever...",
-    "...": "..."
-  },
-  "lint-staged": {
-    "{,!(build)/**/}*.js": [
-      "npm run prettier -- --write",
-      "git add"
-    ]
+"husky": {
+  "hooks": {
+    "pre-commit": "pretty-quick --staged"
   }
-}
+},
 ```
 
 ### Uninstall
@@ -200,26 +193,78 @@ We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is 
 ```bash
 npm uninstall husky --save-dev
 ```
-And delete the `pre` scripts in`package.json`
+And delete the `husky` key in`package.json`
 
 
 ## Prettier
 
-You can add/remove rules if you want `prettier [opts] [filename ...]`. Prettier runs in a precommit hooks to ensure good code formating.
+You can add/remove rules if you want, just edit the `.prettierrc` file. Prettier runs in a precommit hooks to ensure good code formating with [pretty-quick](https://prettier.io/docs/en/precommit.html#option-2-pretty-quick-https-githubcom-azz-pretty-quick).
 ```
 // Edit package.json
 
 "scripts": {
-  "prettier": "prettier --single-quote --trailing-comma es5 --no-semi",
-  "format": "npm run prettier -- --write '{,!(build|generators)/**/}*.js'",
-  "precommit": "lint-staged",
+  "format": "prettier --write '**/*.{js,jsx,json,md}'",
+  "format:changed": "pretty-quick",
+  "format:staged": "pretty-quick --staged",
   "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
 },
-"lint-staged": {
-  "{,!(build|generators)/**/}*.js": [
-    "npm run prettier -- --write",
-    "git add"
-  ]
+"husky": {
+  "hooks": {
+    "pre-commit": "pretty-quick --staged"
+  }
+},
+```
+
+### Uninstall
+
+```bash
+npm uninstall eslint-config-prettier pretty-quick prettier --save-dev
+```
+Delete
+```
+"scripts": {
+  "format": "prettier --write '**/*.{js,jsx,json,md}'",
+  "format:changed": "pretty-quick",
+  "format:staged": "pretty-quick --staged",
+  "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+},
+"husky": {
+  "hooks": {
+    "pre-commit": "pretty-quick --staged"
+  }
+},
+```
+
+## ESLint
+
+You can add/remove rules or even extend plugins if you want. We extend **airbnb** ESLint rules.
+```
+// Edit eslintrc.json
+
+{
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module"
+  },
+  "env": {
+    "es6": true,
+    "jest": true,
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "DEBUG": false
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": 0,
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/prefer-default-export": 0
+  }
 }
 ```
 
@@ -299,7 +344,7 @@ npm run generate
 Allows you to auto-generate boilerplate code for common parts of your
 application, specifically `component`s and `container`s. You can
 also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate container`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
+generate Container` or `npm run generate Component`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
 
 
 ## Reselect

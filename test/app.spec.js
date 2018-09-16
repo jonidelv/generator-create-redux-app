@@ -57,6 +57,10 @@ describe('generator-create-redux-app', () => {
         files: ['.eslintignore'],
       },
       {
+        desc: 'generates a .prettierrc file',
+        files: ['.prettierrc'],
+      },
+      {
         desc: 'generates a eslintrc.json file',
         files: ['.eslintrc.json'],
       },

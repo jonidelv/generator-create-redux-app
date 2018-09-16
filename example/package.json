@@ -4,19 +4,19 @@
   "version": "0.1.0",
   "author": "jonidelv",
   "dependencies": {
-    "prop-types": "^15.6.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
     "react-redux": "^5.0.7",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4",
-    "recompose": "^0.27.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.5",
+    "recompose": "^0.30.0",
     "redux": "^4.0.0",
-    "redux-actions": "^2.3.0",
+    "redux-actions": "^2.6.1",
     "redux-devtools-extension": "^2.13.2",
-    "redux-thunk": "^2.2.0",
+    "redux-thunk": "^2.3.0",
     "reselect": "^3.0.1",
-    "styled-components": "^3.2.6"
+    "styled-components": "^3.4.6"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.2",
@@ -28,29 +28,28 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
-    "lint-staged": "^4.3.0",
     "node-plop": "^0.5.5",
     "plop": "^1.7.4",
-    "prettier": "^1.12.1"
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "prettier": "prettier --single-quote --print-width=120 --trailing-comma es5 --no-semi",
-    "format": "npm run prettier --write 'src/**/*.{js,jsx,json,css}'",
-    "precommit": "lint-staged",
+    "format": "prettier --write '**/*.{js,jsx,json,md}'",
+    "format:changed": "pretty-quick",
+    "format:staged": "pretty-quick --staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint **/*.js --quiet",
     "lint-fix": "eslint --fix",
     "generate": "plop --plopfile generators/index.js"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "npm run prettier --write",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "engines": {
     "npm": ">=4",

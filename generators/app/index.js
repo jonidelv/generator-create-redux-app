@@ -78,6 +78,10 @@ const projectGenerator = Generator.extend({
       this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'))
     },
 
+    prettierrc() {
+      this.fs.copy(this.templatePath('prettierrc'), this.destinationPath('.prettierrc'))
+    },
+
     eslintignore() {
       this.fs.copy(this.templatePath('eslintignore'), this.destinationPath('.eslintignore'))
     },
