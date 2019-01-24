@@ -213,7 +213,8 @@ You can add/remove rules or even extend plugins if you want. We extend **airbnb*
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
-    "import/prefer-default-export": 0
+    "import/prefer-default-export": 0,
+    "import/first": 0
   }
 }
 ```
@@ -279,7 +280,7 @@ npm uninstall redux-actions --save
 
 ## Create React App config
 
-You can find the most recent version of the create-react-app guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+You can find the most recent version of the create-react-app guide [here](https://facebook.github.io/create-react-app/).
 
 
 ## License
