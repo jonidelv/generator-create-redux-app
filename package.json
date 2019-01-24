@@ -1,6 +1,6 @@
 {
   "name": "generator-create-redux-app",
-  "version": "0.2.25",
+  "version": "1.0.0",
   "description": "Add redux, emotion-js and other useful libraries like react-router in top of create-react-app",
   "homepage": "https://github.com/jonidelv/generator-create-redux-app",
   "author": {
@@ -27,10 +27,10 @@
     "yeoman-test": "^1.7.0"
   },
   "dependencies": {
+    "deep-extend": "^0.6.0",
     "to-case": "^2.0.0",
     "yeoman-generator": "^1.1.1",
-    "yosay": "^2.0.0",
-    "deep-extend": "^0.6.0"
+    "yosay": "^2.0.0"
   },
   "scripts": {
     "test": "mocha --bail test/*.spec.js",
