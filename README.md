@@ -4,7 +4,7 @@
 
 [![NPM](https://nodei.co/npm/generator-create-redux-app.png?downloads=true)](https://nodei.co/npm/generator-create-redux-app/)
 
-> This generator add **Redux**, **styled-components** and other useful libraries and tools like **auto-generate boilerplate code**, in top of the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
+> This generator add **redux**, **emotion-js** and other useful libraries and tools like **react-router**, in top of the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
 Below you will find some information on how to perform common tasks.
 
 
@@ -50,27 +50,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
-### `npm run generate`
-
-Allows you to auto-generate boilerplate code for common parts of your
-application, specifically `component`s and `container`s.
-
 
 ## User Guide
 
 - [Folder Structure](#folder-structure)
 - [Redux Dev Tools](#redux-dev-tools)
-- [Absolute Paths](#absolute-paths)
-- [Import Export Containers and Components](#import-export-containers-and-components)
 - [Git Hooks](#git-hooks)
 - [Prettier](#prettier)
 - [ESLint](#eslint)
 - [Routing](#routing)
-- [Styled Components](#styled-components)
+- [Emotion Js](#emotion-js)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
-- [Generators](#generators)
-- [Reselect](#reselect)
-- [Recompose](#recompose)
 - [Redux Actions](#redux-actions)
 - [Create React App config](#create-react-app-config)
 
@@ -83,7 +73,6 @@ Once the generator runs your project folders should look like this:
 ```
 my-app/
   docs/
-  generators/
   public/
     index.html
     favicon.ico
@@ -140,46 +129,6 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 #### 4. For other browsers and non-browser environment
   - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
-
-## Absolute Paths
-
-  By default ES6 modules in create-react-app use relative paths, which is fine for cases where the files you’re importing are relatively close within the file tree
-  so if the file is in the same folder and next to the file you're importing from, just use relative paths like so:
-
-  ```js
-  import { createGoal } from ‘./actions’
-  import { selectAuth } from ‘./selectors’
-  ```
-  But using relative paths is a real pain when you start dealing with deeply nested tree structures because you end up with dot-dot syndrome. Because of the `.env` file at the root level now we can now do absolute path like this:
-
-  ```js
-  import { editUser } from ‘containers/AppContainer/actions’
-  import { selectAuth } from ‘containers/AppContainer/selectors
-  ```
-
-
-## Import Export Containers and Components
-
-### Export
-To Export Components or Containers there is an `index.js` file in each root folder so you have to export it there first in order to import outside the root folder.
-  ```js
-  index.js/
-    export { default as Comp1 } from './Comp1'
-    export { default as Comp2 } from './Comp2'
-  ```
-
-### Import
-To import Components or Containers doit like follow:
-  - Inside the same folder (Components/Containers) <br>
-    ```js
-    import Comp1 from './Comp1'
-    import Cont1 from './Cont1'
-    ```
-  - Outside the same folder (Components/Containers) <br>
-    ```js
-    import { Comp1 } from '../components'
-    import { Cont1 } from '../containers'
-    ```
 
 ## Git Hooks
 
@@ -281,53 +230,14 @@ The best option for routing is [React Router](https://reacttraining.com/react-ro
 `src/routes/index.js` is the starter point of the app, where all the routes are specified and render the containers and components. Specify here all your routes, redirects, transitions, etc.
 
 
-## Styled Components
+## Emotion Js
 
-[styled-components](https://styled-components.com/) allow you to write actual CSS code in your JavaScript to style your components,
+[emotion-js](https://emotion.sh/) allow you to write actual CSS code in your JavaScript to style your components,
 removing the mapping between components and styles.
 
 See the
-[official documentation](https://github.com/styled-components/styled-components)
+[official documentation](https://emotion.sh/docs/introduction)
 for more information!
-
-### Usage
-
-This creates two react components, `<Title>` and `<Wrapper>`:
-
-```JSX
-import React from 'react'
-
-import styled from 'styled-components'
-
-// Create a <Title> react component that renders an <h1> which is
-// centered, palevioletred and sized at 1.5em
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`
-
-// Create a <Wrapper> react component that renders a <section> with
-// some padding and a papayawhip background
-const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
-`
-```
-
-*(The CSS rules are automatically vendor prefixed, so you don't have to think about it!)*
-
-You render them like so:
-
-```JSX
-// Use them like any other React component – except they're styled!
-<Wrapper>
-  <Title>Hello World, this is my first styled component!</Title>
-</Wrapper>
-```
-
-For further examples see the
-[official documentation](https://github.com/styled-components/styled-components).
 
 
 ## Adding Sass Preprocessor
@@ -341,109 +251,6 @@ out into JS where we believe those features belong.
 If you _really_ still want (or need) to use Sass [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
 
-## Generators
-
-```Shell
-npm run generate
-```
-
-Allows you to auto-generate boilerplate code for common parts of your
-application, specifically `component`s and `container`s. You can
-also run `npm run generate <part>` to skip the first selection. (e.g. `npm run
-generate Container` or `npm run generate Component`). This generators are outside yeoman so you can change them to fit your necessities, for this just go to `generators/index.js`, see [plop documentation](https://plopjs.com/documentation/) for more information.
-
-
-## Reselect
-
-To prevent useless renders in (Redux) connected components, you must also make sure that the mapStateToProps function doesn’t return new objects each time it is called.
-The problem is that each time mapStateToProps runs, it returns a new object, even if the underlying objects didn’t change. As a consequence, the component re renders every time something in the state changes — while id should only render if the part of the state we are requiring change.<br>
-
-[Reselect](https://github.com/reactjs/reselect) solves this problem by using memoization. Instead of computing the props directly in mapStateToProps, you use a selector from reselect, which returns the same output if the input didn’t change.
-
-### Usage
-
-Examples:
-
-- Without Reselect
-  ```js
-  function mapStateToProps (state) {
-    return {
-      counter: state.counter
-    }
-  }
-  ```
-- With Reselect
-  ```js
-  import { createStructuredSelector, createSelector } from 'reselect'
-
-  const mapStateToProps = createStructuredSelector({
-    counter: createSelector(
-      (state) => state.counter,
-      (counterState) => counterState
-    ),
-  })
-  ```
-For further examples see the [official documentation](https://github.com/reactjs/reselect#createstructuredselectorinputselectors-selectorcreator--createselector).
-
-### Uninstall
-
-```bash
-npm uninstall reselect --save
-```
-**Note**<br>
-If you uninstall reselect, generating a container with a selector feature from the command line (`npm run generate`) will throw an error.
-
-
-## Recompose
-
-Because a need of `shouldComponentUpdate`, sometime you have to transform a simple, functional component to a class-based component. This adds more lines of code, and every line of code has a cost — to write, to debug, and to maintain.
-Fortunately, you can implement the `shouldComponentUpdate` logic thanks to [recompose](https://github.com/acdlite/recompose). It’s a functional utility belt for React, providing for instance the `pure()` HOC.
-Now instead  of export the component we can do `export default pure(componentName)` an this will be pure without transforming to a class-based component.
-
-### Usage
-
-Component will only update for specific keys.
-```js
-import onlyUpdateForKeys from ‘recompose/onlyUpdateForKeys’
-
-const componentName = ({ resource, ids, data, children }) => (
-    ...
-);
-export default onlyUpdateForKeys([‘ids’, ‘data’])(componentName)
-```
-
-Be more specific and target only the props that I know may change
-```js
-import shouldUpdate from ‘recompose/shouldUpdate’
-
-const componentName = ({ resource, ids, data, children }) => (
-    ...
-);
-const checkPropsChange = (props, nextProps) =>
- (nextProps.ids !== props.ids ||
-  nextProps.data !== props.data);
-export default shouldUpdate(checkPropsChange)(componentName)
-```
-
-Make your component pure even if is not a class based component
-```js
-import pure from ‘recompose/pure
-
-const componentName = ({ resource, ids, data, children }) => (
-    ...
-);
-export default pure(componentName)
-```
-
-### Uninstall
-
-```bash
-npm uninstall recompose --save
-```
-**Note**<br>
-If you uninstall recompose, generating a pure component from the command line (`npm run generate`) will throw an error.
-
-
 ## Redux Actions
 
 If you adopt Flux standard action (FSA) and you will, right ?, then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.
@@ -451,12 +258,12 @@ If you adopt Flux standard action (FSA) and you will, right ?, then you can also
 ### Usage
 
 ```js
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../constants/ActionTypes'
+import ActionTypes from '../constants/actionTypes'
 import { createAction } from 'redux-actions'
 
-export const increment = createAction(INCREMENT_COUNTER)
+export const increment = createAction(ActionTypes.INCREMENT_COUNTER)
 
-export const decrement = createAction(DECREMENT_COUNTER)
+export const decrement = createAction(ActionTypes.DECREMENT_COUNTER)
 ```
 More examples
 ```js

@@ -8,9 +8,9 @@ const projectGenerator = Generator.extend({
     welcome() {
       this.log(
         yosay(
-          "'Allo 'allo! This generator add Redux, " +
-            'styled-components and some useful tools and libraries like ' +
-            'auto-generate boilerplate code to the most common ' +
+          "'Allo 'allo! This generator add redux, " +
+            'emotion-js and some useful tools and libraries like ' +
+            'react-router to the most common ' +
             'React starter Create React App'
         )
       )
@@ -88,14 +88,6 @@ const projectGenerator = Generator.extend({
 
     eslintrc() {
       this.fs.copy(this.templatePath('eslintrc.json'), this.destinationPath('.eslintrc.json'))
-    },
-
-    env() {
-      this.fs.copy(this.templatePath('env'), this.destinationPath('.env'))
-    },
-
-    generators() {
-      this.fs.copy(this.templatePath('generators'), this.destinationPath('generators'))
     },
 
     docs() {

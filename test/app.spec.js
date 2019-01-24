@@ -37,10 +37,6 @@ describe('generator-create-redux-app', () => {
         files: ['docs'],
       },
       {
-        desc: 'generates a generators folder',
-        files: ['generators'],
-      },
-      {
         desc: 'generates a src folder',
         files: ['src'],
       },
@@ -63,10 +59,6 @@ describe('generator-create-redux-app', () => {
       {
         desc: 'generates a eslintrc.json file',
         files: ['.eslintrc.json'],
-      },
-      {
-        desc: 'generates a .env file',
-        files: ['.env'],
       },
       {
         desc: 'generates a package.json file',

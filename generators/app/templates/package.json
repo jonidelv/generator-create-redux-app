@@ -4,23 +4,20 @@
   "version": "<%= projectVersion %>",
   "author": "<%= authorName %>",
   "dependencies": {
+    "@emotion/core": "^10.0.6",
+    "@emotion/styled": "^10.0.6",
     "prop-types": "^15.6.2",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-redux": "^5.0.7",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.5",
-    "recompose": "^0.30.0",
-    "redux": "^4.0.0",
-    "redux-actions": "^2.6.1",
+    "react-scripts": "^2.1.3",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
     "redux-devtools-extension": "^2.13.2",
-    "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1",
-    "styled-components": "^3.4.6"
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.2",
-    "eslint": "^4.10.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.8.0",
@@ -28,8 +25,6 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.4.0",
     "husky": "^0.14.3",
-    "node-plop": "^0.5.5",
-    "plop": "^1.7.4",
     "prettier": "^1.14.2",
     "pretty-quick": "^1.6.0"
   },
@@ -43,14 +38,19 @@
     "format:staged": "pretty-quick --staged",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "lint": "eslint **/*.js --quiet",
-    "lint-fix": "eslint --fix",
-    "generate": "plop --plopfile generators/index.js"
+    "lint-fix": "eslint --fix"
   },
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "engines": {
     "npm": ">=4",
     "node": ">=6"

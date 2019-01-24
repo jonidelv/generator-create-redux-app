@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import pure from 'recompose/pure'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
-const Intro = styled.p`font-size: large;`
+const Intro = styled.p`
+  font-size: large;
+`
 
 function Counter({ increment, incrementIfOdd, decrement, counter }) {
   return (
@@ -27,4 +28,4 @@ Counter.propTypes = {
   counter: PropTypes.number.isRequired,
 }
 
-export default pure(Counter)
+export default Counter
