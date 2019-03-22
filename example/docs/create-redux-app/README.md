@@ -54,8 +54,9 @@ Your app is ready to be deployed!
 - [Routing](#routing)
 - [Emotion Js](#emotion-js)
 - [Adding Sass Preprocessor](#adding-sass-preprocessor)
-- [Redux Actions](#redux-actions)
+- [Redux Store](#redux-store)
 - [Create React App config](#create-react-app-config)
+
 
 ## Folder Structure
 
@@ -65,7 +66,6 @@ Once the generator runs your project folders should look like this:
 ```
 my-app/
   docs/
-  generators/
   public/
     index.html
     favicon.ico
@@ -86,8 +86,8 @@ my-app/
 
 For the project to build, **these files must exist with exact filenames**:
 
-- `public/index.html` is the page template;
-- `src/index.js` is the JavaScript entry point.
+* `public/index.html` is the page template;
+* `src/index.js` is the JavaScript entry point.
 
 You can delete or rename the other files.
 
@@ -100,6 +100,7 @@ Read instructions below for using assets from JavaScript and HTML.
 You can, however, create more top-level directories.<br>
 They will not be included in the production build so you can use them for things like documentation.
 
+
 ## Redux Dev Tools
 
 Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/). It provides access to the most popular monitors, is easy to configure and to filter actions.
@@ -107,28 +108,24 @@ Create Redux App use [Redux DevTools Extension](http://extension.remotedev.io/).
 ### Installation
 
 #### 1. For Chrome
-
-- from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
-- or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
-- or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
+ - from [Chrome Web Store](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd);
+ - or build it with `npm i && npm run build:extension` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./build/extension`;
+ - or run it in dev mode with `npm i && npm start` and [load the extension's folder](https://developer.chrome.com/extensions/getstarted#unpacked) `./dev`.
 
 #### 2. For Firefox
-
-- from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
-- or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
+ - from [Mozilla Add-ons](https://addons.mozilla.org/en-US/firefox/addon/remotedev/);
+ - or build it with `npm i && npm run build:firefox` and [load the extension's folder](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Temporary_Installation_in_Firefox) `./build/firefox` (just select a file from inside the dir).
 
 #### 3. For Electron
-
-- just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
+  - just specify `REDUX_DEVTOOLS` in [`electron-devtools-installer`](https://github.com/GPMDP/electron-devtools-installer).
 
 #### 4. For other browsers and non-browser environment
+  - use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
-- use [`remote-redux-devtools`](https://github.com/zalmoxisus/remote-redux-devtools).
 
 ## Git Hooks
 
 We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is a pre commit hook than run prettier to ensure good code format. You can also create a prepush hook.<br>
-
 ```
 // Edit package.json
 
@@ -144,13 +141,12 @@ We use [Husky](https://github.com/typicode/husky) to create Git Hooks. There is 
 ```bash
 npm uninstall husky --save-dev
 ```
-
 And delete the `husky` key in`package.json`
+
 
 ## Prettier
 
 You can add/remove rules if you want, just edit the `.prettierrc` file. Prettier runs in a precommit hooks to ensure good code formating with [pretty-quick](https://prettier.io/docs/en/precommit.html#option-2-pretty-quick-https-githubcom-azz-pretty-quick).
-
 ```
 // Edit package.json
 
@@ -172,9 +168,7 @@ You can add/remove rules if you want, just edit the `.prettierrc` file. Prettier
 ```bash
 npm uninstall eslint-config-prettier pretty-quick prettier --save-dev
 ```
-
 Delete
-
 ```
 "scripts": {
   "format": "prettier --write '**/*.{js,jsx,json,md}'",
@@ -192,7 +186,6 @@ Delete
 ## ESLint
 
 You can add/remove rules or even extend plugins if you want. We extend **airbnb** ESLint rules.
-
 ```
 // Edit eslintrc.json
 
@@ -224,10 +217,12 @@ You can add/remove rules or even extend plugins if you want. We extend **airbnb*
 }
 ```
 
+
 ## Routing
 
 The best option for routing is [React Router](https://reacttraining.com/react-router/) specifically its new version for the web [react-router-dom](https://reacttraining.com/react-router/web/guides/quick-start). <br>
 `src/routes/index.js` is the starter point of the app, where all the routes are specified and render the containers and components. Specify here all your routes, redirects, transitions, etc.
+
 
 ## Emotion Js
 
@@ -237,6 +232,7 @@ removing the mapping between components and styles.
 See the
 [official documentation](https://emotion.sh/docs/introduction)
 for more information!
+
 
 ## Adding Sass Preprocessor
 
@@ -248,42 +244,32 @@ out into JS where we believe those features belong.
 
 If you _really_ still want (or need) to use Sass [then...](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 
-## Redux Actions
 
-If you adopt Flux standard action (FSA) and you will, right ?, then you can also consider some libraries that are designed to work with it. [redux-actions](https://github.com/acdlite/redux-actions) is the most popular. Then just export the `createAction` function.
+## Redux Store
+
+The Redux store is created this way so you can use it anywhere, even outside redux, in any js file.
+
+```js
+const { default: store } = process.env.NODE_ENV === 'production'
+  ? require('./storeProd')
+  : require('./storeDev')
+
+module.exports = store()
+```
 
 ### Usage
 
 ```js
-import ActionTypes from '../constants/actionTypes'
-import { createAction } from 'redux-actions'
+import store from './store'
 
-export const increment = createAction(ActionTypes.INCREMENT_COUNTER)
-
-export const decrement = createAction(ActionTypes.DECREMENT_COUNTER)
-```
-
-More examples
-
-```js
-const inc = createAction(INCREMENT)
-inc() // { type: INCREMENT }
-inc(1) // { type: INCREMENT, payload: 1 }
-
-const addUser = createAction(ADD_USER, (name, lastName) => ({ name, lastName }))
-addUser('John', 'Doe') // { type: ADD_USER, payload: { name: 'John', lastName: 'Doe' } }
-addUser(new Error('no user')) // { type: ADD_USER, error: true, payload: /* error */ }
-```
-
-### Uninstall
-
-```bash
-npm uninstall redux-actions --save
+store.getState() // Get the state
+store.dispatch() // Dispatch actions
 ```
 
 ## Create React App config
 
 You can find the most recent version of the create-react-app guide [here](https://facebook.github.io/create-react-app/).
+
 
 ## License
 
