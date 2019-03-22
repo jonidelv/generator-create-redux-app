@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Counter from '../components/Counter'
-import incrementIfOdd from '../actions/counter'
+import ActionTypes from '../constants/actionTypes'
+import { incrementIfOdd } from '../actions/counter'
 import { connect } from 'react-redux'
 
 class CounterContainer extends React.Component {
