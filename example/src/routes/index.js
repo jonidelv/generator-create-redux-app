@@ -2,7 +2,7 @@ import React from 'react'
 import CounterContainer from '../containers/CounterContainer'
 import Header from '../components/Header'
 import { Router, Route, Switch } from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
+import { createBrowserHistory } from 'history'
 import styled from '@emotion/styled'
 
 const Container = styled.div`

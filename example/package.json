@@ -1,6 +1,6 @@
 {
   "name": "example",
-  "description": "example",
+  "description": "generator create-redux-app example",
   "version": "0.1.0",
   "author": "jonidelv",
   "dependencies": {

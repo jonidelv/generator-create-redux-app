@@ -4,7 +4,7 @@ This project was bootstrapped with [Create Redux App](https://github.com/jonidel
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 6.10.3 on your machine** [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and generator-create-redux-app using [npm](https://www.npmjs.com/) ( **You’ll need to have Node >= 6.10.3 on your machine**  [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
@@ -43,6 +43,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
+
 
 ## User Guide
 
