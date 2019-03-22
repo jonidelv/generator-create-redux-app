@@ -20,14 +20,14 @@
     "yeoman-generator"
   ],
   "devDependencies": {
+    "extend": "^3.0.2",
     "growl": "^1.10.0",
+    "just-extend": "^4.0.0",
+    "lodash": "^4.17.11",
     "mocha": "^3.4.2",
     "np": "^2.16.0",
     "yeoman-assert": "^3.0.0",
-    "yeoman-test": "^1.7.0",
-    "lodash": "^4.17.11",
-    "extend": "^3.0.2",
-    "just-extend": "^4.0.0"
+    "yeoman-test": "^1.7.0"
   },
   "dependencies": {
     "deep-extend": "^0.6.0",
