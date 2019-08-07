@@ -1,7 +1,5 @@
 # Generator create-redux-app
 
-[![Build Status](https://travis-ci.org/jonidelv/generator-create-redux-app.svg?branch=master)](https://travis-ci.org/jonidelv/generator-create-redux-app)
-
 [![NPM](https://nodei.co/npm/generator-create-redux-app.png?downloads=true)](https://nodei.co/npm/generator-create-redux-app/)
 
 > This generator add **redux**, **emotion-js** and other useful libraries and tools like **react-router**, in top of the most common React starter [Create React App](https://github.com/facebookincubator/create-react-app).
