@@ -25,7 +25,7 @@
     "just-extend": "^4.0.0",
     "lodash": "^4.17.11",
     "mocha": "^3.4.2",
-    "np": "^2.16.0",
+    "np": "^5.0.3",
     "yeoman-assert": "^3.0.0",
     "yeoman-test": "^1.7.0"
   },
